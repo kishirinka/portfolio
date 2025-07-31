@@ -1,0 +1,627 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project - Nia Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ek+Mukta:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'sans': ['Ek Mukta', 'sans-serif'],
+                    },
+                    colors: {
+                        'mist': '#F4F3F1',
+                        'peoni': '#F2D2D4',
+                        'mauve': '#D89598',
+                        'sage': '#829672',
+                        'evergreen': '#344C3D'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-mist font-sans min-h-screen">
+    <!-- Navigation -->
+    <nav class="flex justify-center space-x-12 pt-8 pb-4 px-6 text-peoni font-medium text-lg">
+        <a href="/" class="hover:text-sage transition-colors text-xl">Home</a>
+        <a href="/about" class="hover:text-sage transition-colors text-xl">About me</a>
+        <a href="/project" class="hover:text-sage transition-colors text-3xl text-mauve font-semibold">Project</a>
+        <a href="#" class="hover:text-sage transition-colors text-xl">Contact</a>
+    </nav>
+
+    <div class="container mx-auto px-8 py-12">
+        <!-- Page Title -->
+        <h1 class="text-5xl font-bold text-evergreen text-center mb-12">Project</h1>
+
+        <!-- Category Navigation (Sticky) -->
+        <div class="sticky top-0 bg-mist z-10 py-4 mb-8">
+            <div class="flex justify-center space-x-4">
+                <button onclick="scrollToSection('data-visualization')" class="bg-sage text-white px-6 py-3 rounded-full font-semibold hover:bg-evergreen transition-colors duration-300 focus:bg-evergreen">
+                    Data Visualization
+                </button>
+                <button onclick="scrollToSection('research-paper')" class="bg-gray-300 text-gray-700 px-6 py-3 rounded-full font-semibold hover:bg-sage hover:text-white transition-colors duration-300">
+                    Research Paper
+                </button>
+                <button onclick="scrollToSection('ml-dl-ai')" class="bg-gray-300 text-gray-700 px-6 py-3 rounded-full font-semibold hover:bg-sage hover:text-white transition-colors duration-300">
+                    ML/DL/AI
+                </button>
+                <button onclick="scrollToSection('sql')" class="bg-gray-300 text-gray-700 px-6 py-3 rounded-full font-semibold hover:bg-sage hover:text-white transition-colors duration-300">
+                    SQL
+                </button>
+            </div>
+        </div>
+
+        <!-- Data Visualization Section -->
+        <section id="data-visualization" class="mb-16">
+            <h2 class="text-3xl font-bold text-sage mb-8 text-center">Data Visualization</h2>
+            <div class="relative">
+                <!-- Carousel Container -->
+                <div class="overflow-hidden">
+                    <div id="carousel-data-viz" class="flex transition-transform duration-300 ease-in-out">
+                        <!-- Slide 1 -->
+                        <div class="w-full flex-shrink-0">
+                            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-4">
+                                <!-- Project Card 1 -->
+                                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 flex flex-col h-full">
+                                    <div class="h-48 bg-gray-200 flex items-center justify-center">
+                                        <img src="{% static 'image/tableau.png' %}" alt="Tableau Project" class="w-32 h-32 object-contain">
+                                    </div>
+                                    <div class="p-6 flex flex-col flex-grow">
+                                        <h3 class="text-xl font-bold text-evergreen mb-2">Judul Di Sini</h3>
+                                        <p class="text-gray-600 text-sm mb-4 flex-grow">
+                                            I've explored and analyzed more than 10 datasets from Kaggle, focusing on topics such as customer behavior, health, education, and finance.
+                                        </p>
+                                        <div class="flex justify-between items-center mt-auto">
+                                            <div class="flex space-x-2">
+                                                <img src="{% static 'image/tableau.png' %}" alt="Tableau" class="w-10 h-10 object-contain">
+                                                <img src="{% static 'image/python.png' %}" alt="Python" class="w-10 h-10 object-contain">
+                                            </div>
+                                            <button class="bg-mauve text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-sage transition-colors duration-300">
+                                                Demo
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Project Card 2 -->
+                                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 flex flex-col h-full">
+                                    <div class="h-48 bg-gray-200 flex items-center justify-center">
+                                        <img src="{% static 'image/powerbi.png' %}" alt="Power BI Project" class="w-32 h-32 object-contain">
+                                    </div>
+                                    <div class="p-6 flex flex-col flex-grow">
+                                        <h3 class="text-xl font-bold text-evergreen mb-2">Judul Di Sini</h3>
+                                        <p class="text-gray-600 text-sm mb-4 flex-grow">
+                                            I've explored and analyzed more than 10 datasets from Kaggle, focusing on topics such as customer behavior, health, education, and finance.
+                                        </p>
+                                        <div class="flex justify-between items-center mt-auto">
+                                            <div class="flex space-x-2">
+                                                <img src="{% static 'image/powerbi.png' %}" alt="Power BI" class="w-10 h-10 object-contain">
+                                                <img src="{% static 'image/excel.png' %}" alt="Excel" class="w-10 h-10 object-contain">
+                                            </div>
+                                            <button class="bg-mauve text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-sage transition-colors duration-300">
+                                                Demo
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Project Card 3 -->
+                                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 flex flex-col h-full">
+                                    <div class="h-48 bg-gray-200 flex items-center justify-center">
+                                        <img src="{% static 'image/python.png' %}" alt="Python Analytics Project" class="w-32 h-32 object-contain">
+                                    </div>
+                                    <div class="p-6 flex flex-col flex-grow">
+                                        <h3 class="text-xl font-bold text-evergreen mb-2">Judul Di Sini</h3>
+                                        <p class="text-gray-600 text-sm mb-4 flex-grow">
+                                            Overview:
+This project aimed to explore, clean, and visualize customer transaction data from an e-commerce platform to better understand purchasing behavior, segment customers, and support strategic decision-making. I created an interactive dashboard that brings together multiple layers of analysis into a cohesive, intuitive visual experience.
+
+Objectives:
+
+To identify key sales trends across time, products, and customer segments
+
+To perform customer segmentation using RFM (Recency, Frequency, Monetary) analysis
+
+To design a visual tool that allows business stakeholders to quickly extract actionable insights without diving into raw data
+                                        </p>
+                                        <div class="flex justify-between items-center mt-auto">
+                                            <div class="flex space-x-2">
+                                                <img src="{% static 'image/python.png' %}" alt="Python" class="w-10 h-10 object-contain">
+                                                <img src="{% static 'image/kaggle.png' %}" alt="Kaggle" class="w-10 h-10 object-contain">
+                                            </div>
+                                            <button class="bg-mauve text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-sage transition-colors duration-300">
+                                                Demo
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Slide 2 -->
+                        <div class="w-full flex-shrink-0">
+                            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-4">
+                                <!-- Project Card 4 -->
+                                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 flex flex-col h-full">
+                                    <div class="h-48 bg-gray-200 flex items-center justify-center">
+                                        <img src="{% static 'image/excel.png' %}" alt="Excel Analytics Project" class="w-32 h-32 object-contain">
+                                    </div>
+                                    <div class="p-6 flex flex-col flex-grow">
+                                        <h3 class="text-xl font-bold text-evergreen mb-2">Judul Di Sini</h3>
+                                        <p class="text-gray-600 text-sm mb-4 flex-grow">
+                                            I've explored and analyzed more than 10 datasets from Kaggle, focusing on topics such as customer behavior, health, education, and finance.
+                                        </p>
+                                        <div class="flex justify-between items-center mt-auto">
+                                            <div class="flex space-x-2">
+                                                <img src="{% static 'image/excel.png' %}" alt="Excel" class="w-10 h-10 object-contain">
+                                                <img src="{% static 'image/powerbi.png' %}" alt="Power BI" class="w-10 h-10 object-contain">
+                                            </div>
+                                            <button class="bg-mauve text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-sage transition-colors duration-300">
+                                                Demo
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Project Card 5 -->
+                                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 flex flex-col h-full">
+                                    <div class="h-48 bg-gray-200 flex items-center justify-center">
+                                        <img src="{% static 'image/spss.png' %}" alt="SPSS Analytics Project" class="w-32 h-32 object-contain">
+                                    </div>
+                                    <div class="p-6 flex flex-col flex-grow">
+                                        <h3 class="text-xl font-bold text-evergreen mb-2">Judul Di Sini</h3>
+                                        <p class="text-gray-600 text-sm mb-4 flex-grow">
+                                            I've explored and analyzed more than 10 datasets from Kaggle, focusing on topics such as customer behavior, health, education, and finance.
+                                        </p>
+                                        <div class="flex justify-between items-center mt-auto">
+                                            <div class="flex space-x-2">
+                                                <img src="{% static 'image/spss.png' %}" alt="SPSS" class="w-10 h-10 object-contain">
+                                                <img src="{% static 'image/python.png' %}" alt="Python" class="w-10 h-10 object-contain">
+                                            </div>
+                                            <button class="bg-mauve text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-sage transition-colors duration-300">
+                                                Demo
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Project Card 6 -->
+                                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 flex flex-col h-full">
+                                    <div class="h-48 bg-gray-200 flex items-center justify-center">
+                                        <img src="{% static 'image/kaggle.png' %}" alt="Kaggle Project" class="w-32 h-32 object-contain">
+                                    </div>
+                                    <div class="p-6 flex flex-col flex-grow">
+                                        <h3 class="text-xl font-bold text-evergreen mb-2">Judul Di Sini</h3>
+                                        <p class="text-gray-600 text-sm mb-4 flex-grow">
+                                            I've explored and analyzed more than 10 datasets from Kaggle, focusing on topics such as customer behavior, health, education, and finance.
+                                        </p>
+                                        <div class="flex justify-between items-center mt-auto">
+                                            <div class="flex space-x-2">
+                                                <img src="{% static 'image/kaggle.png' %}" alt="Kaggle" class="w-10 h-10 object-contain">
+                                                <img src="{% static 'image/tableau.png' %}" alt="Tableau" class="w-10 h-10 object-contain">
+                                            </div>
+                                            <button class="bg-mauve text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-sage transition-colors duration-300">
+                                                Demo
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Navigation Arrows -->
+                <button onclick="prevSlide('data-viz')" class="absolute left-2 top-1/2 transform -translate-y-1/2 bg-sage text-white p-3 rounded-full hover:bg-evergreen transition-colors duration-300 shadow-lg">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                    </svg>
+                </button>
+                <button onclick="nextSlide('data-viz')" class="absolute right-2 top-1/2 transform -translate-y-1/2 bg-sage text-white p-3 rounded-full hover:bg-evergreen transition-colors duration-300 shadow-lg">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                    </svg>
+                </button>
+
+                <!-- Dots Indicator -->
+                <div class="flex justify-center mt-6 space-x-2">
+                    <button onclick="goToSlide('data-viz', 0)" class="w-3 h-3 rounded-full bg-sage dot-indicator-data-viz-0"></button>
+                    <button onclick="goToSlide('data-viz', 1)" class="w-3 h-3 rounded-full bg-gray-300 dot-indicator-data-viz-1"></button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Research Paper Section -->
+        <section id="research-paper" class="mb-16">
+            <h2 class="text-3xl font-bold text-sage mb-8 text-center">Research Paper</h2>
+            <div class="relative">
+                <!-- Carousel Container -->
+                <div class="overflow-hidden">
+                    <div id="carousel-research" class="flex transition-transform duration-300 ease-in-out">
+                        <!-- Slide 1 -->
+                        <div class="w-full flex-shrink-0">
+                            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-4">
+                                <!-- Research Card 1 -->
+                                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 flex flex-col h-full">
+                                    <div class="h-48 bg-gray-200 flex items-center justify-center">
+                                        <img src="{% static 'image/github.png' %}" alt="GitHub Research" class="w-32 h-32 object-contain">
+                                    </div>
+                                    <div class="p-6 flex flex-col flex-grow">
+                                        <h3 class="text-xl font-bold text-evergreen mb-2">Judul Di Sini</h3>
+                                        <p class="text-gray-600 text-sm mb-4 flex-grow">
+                                            I've explored and analyzed more than 10 datasets from Kaggle, focusing on topics such as customer behavior, health, education, and finance.
+                                        </p>
+                                        <div class="flex justify-between items-center mt-auto">
+                                            <div class="flex space-x-2">
+                                                <img src="{% static 'image/github.png' %}" alt="GitHub" class="w-10 h-10 object-contain">
+                                                <img src="{% static 'image/python.png' %}" alt="Python" class="w-10 h-10 object-contain">
+                                            </div>
+                                            <button class="bg-mauve text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-sage transition-colors duration-300">
+                                                Demo
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Research Card 2 -->
+                                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 flex flex-col h-full">
+                                    <div class="h-48 bg-gray-200 flex items-center justify-center">
+                                        <img src="{% static 'image/colab.png' %}" alt="Google Colab Research" class="w-32 h-32 object-contain">
+                                    </div>
+                                    <div class="p-6 flex flex-col flex-grow">
+                                        <h3 class="text-xl font-bold text-evergreen mb-2">Judul Di Sini</h3>
+                                        <p class="text-gray-600 text-sm mb-4 flex-grow">
+                                            I've explored and analyzed more than 10 datasets from Kaggle, focusing on topics such as customer behavior, health, education, and finance.
+                                        </p>
+                                        <div class="flex justify-between items-center mt-auto">
+                                            <div class="flex space-x-2">
+                                                <img src="{% static 'image/colab.png' %}" alt="Google Colab" class="w-10 h-10 object-contain">
+                                                <img src="{% static 'image/kaggle.png' %}" alt="Kaggle" class="w-10 h-10 object-contain">
+                                            </div>
+                                            <button class="bg-mauve text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-sage transition-colors duration-300">
+                                                Demo
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Research Card 3 -->
+                                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 flex flex-col h-full">
+                                    <div class="h-48 bg-gray-200 flex items-center justify-center">
+                                        <img src="{% static 'image/kaggle.png' %}" alt="Kaggle Research" class="w-32 h-32 object-contain">
+                                    </div>
+                                    <div class="p-6 flex flex-col flex-grow">
+                                        <h3 class="text-xl font-bold text-evergreen mb-2">Judul Di Sini</h3>
+                                        <p class="text-gray-600 text-sm mb-4 flex-grow">
+                                            I've explored and analyzed more than 10 datasets from Kaggle, focusing on topics such as customer behavior, health, education, and finance.
+                                        </p>
+                                        <div class="flex justify-between items-center mt-auto">
+                                            <div class="flex space-x-2">
+                                                <img src="{% static 'image/kaggle.png' %}" alt="Kaggle" class="w-10 h-10 object-contain">
+                                                <img src="{% static 'image/python.png' %}" alt="Python" class="w-10 h-10 object-contain">
+                                            </div>
+                                            <button class="bg-mauve text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-sage transition-colors duration-300">
+                                                Demo
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Slide 2 -->
+                        <div class="w-full flex-shrink-0">
+                            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-4">
+                                <!-- Research Card 4 -->
+                                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 flex flex-col h-full">
+                                    <div class="h-48 bg-gray-200 flex items-center justify-center">
+                                        <img src="{% static 'image/python.png' %}" alt="Python Research" class="w-32 h-32 object-contain">
+                                    </div>
+                                    <div class="p-6 flex flex-col flex-grow">
+                                        <h3 class="text-xl font-bold text-evergreen mb-2">Judul Di Sini</h3>
+                                        <p class="text-gray-600 text-sm mb-4 flex-grow">
+                                            I've explored and analyzed more than 10 datasets from Kaggle, focusing on topics such as customer behavior, health, education, and finance.
+                                        </p>
+                                        <div class="flex justify-between items-center mt-auto">
+                                            <div class="flex space-x-2">
+                                                <img src="{% static 'image/python.png' %}" alt="Python" class="w-10 h-10 object-contain">
+                                                <img src="{% static 'image/github.png' %}" alt="GitHub" class="w-10 h-10 object-contain">
+                                            </div>
+                                            <button class="bg-mauve text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-sage transition-colors duration-300">
+                                                Demo
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Research Card 5 -->
+                                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 flex flex-col h-full">
+                                    <div class="h-48 bg-gray-200 flex items-center justify-center">
+                                        <img src="{% static 'image/powerpoint.png' %}" alt="PowerPoint Research" class="w-32 h-32 object-contain">
+                                    </div>
+                                    <div class="p-6 flex flex-col flex-grow">
+                                        <h3 class="text-xl font-bold text-evergreen mb-2">Judul Di Sini</h3>
+                                        <p class="text-gray-600 text-sm mb-4 flex-grow">
+                                            I've explored and analyzed more than 10 datasets from Kaggle, focusing on topics such as customer behavior, health, education, and finance.
+                                        </p>
+                                        <div class="flex justify-between items-center mt-auto">
+                                            <div class="flex space-x-2">
+                                                <img src="{% static 'image/powerpoint.png' %}" alt="PowerPoint" class="w-10 h-10 object-contain">
+                                                <img src="{% static 'image/word.png' %}" alt="Word" class="w-10 h-10 object-contain">
+                                            </div>
+                                            <button class="bg-mauve text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-sage transition-colors duration-300">
+                                                Demo
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Navigation Arrows -->
+                <button onclick="prevSlide('research')" class="absolute left-2 top-1/2 transform -translate-y-1/2 bg-sage text-white p-3 rounded-full hover:bg-evergreen transition-colors duration-300 shadow-lg">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                    </svg>
+                </button>
+                <button onclick="nextSlide('research')" class="absolute right-2 top-1/2 transform -translate-y-1/2 bg-sage text-white p-3 rounded-full hover:bg-evergreen transition-colors duration-300 shadow-lg">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                    </svg>
+                </button>
+
+                <!-- Dots Indicator -->
+                <div class="flex justify-center mt-6 space-x-2">
+                    <button onclick="goToSlide('research', 0)" class="w-3 h-3 rounded-full bg-sage dot-indicator-research-0"></button>
+                    <button onclick="goToSlide('research', 1)" class="w-3 h-3 rounded-full bg-gray-300 dot-indicator-research-1"></button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ML/DL/AI Section -->
+        <section id="ml-dl-ai" class="mb-16">
+            <h2 class="text-3xl font-bold text-sage mb-8 text-center">ML/DL/AI</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- AI Card 1 -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 flex flex-col h-full">
+                    <div class="h-48 bg-gray-200 flex items-center justify-center">
+                        <img src="{% static 'image/python.png' %}" alt="Python AI Project" class="w-32 h-32 object-contain">
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h3 class="text-xl font-bold text-evergreen mb-2">Judul Di Sini</h3>
+                        <p class="text-gray-600 text-sm mb-4 flex-grow">
+                            I've explored and analyzed more than 10 datasets from Kaggle, focusing on topics such as customer behavior, health, education, and finance.
+                        </p>
+                        <div class="flex justify-between items-center mt-auto">
+                            <div class="flex space-x-2">
+                                <img src="{% static 'image/python.png' %}" alt="Python" class="w-10 h-10 object-contain">
+                                <img src="{% static 'image/kaggle.png' %}" alt="Kaggle" class="w-10 h-10 object-contain">
+                            </div>
+                            <button class="bg-mauve text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-sage transition-colors duration-300">
+                                Demo
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- AI Card 2 -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 flex flex-col h-full">
+                    <div class="h-48 bg-gray-200 flex items-center justify-center">
+                        <img src="{% static 'image/colab.png' %}" alt="Google Colab AI Project" class="w-32 h-32 object-contain">
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h3 class="text-xl font-bold text-evergreen mb-2">Judul Di Sini</h3>
+                        <p class="text-gray-600 text-sm mb-4 flex-grow">
+                            I've explored and analyzed more than 10 datasets from Kaggle, focusing on topics such as customer behavior, health, education, and finance.
+                        </p>
+                        <div class="flex justify-between items-center mt-auto">
+                            <div class="flex space-x-2">
+                                <img src="{% static 'image/colab.png' %}" alt="Google Colab" class="w-10 h-10 object-contain">
+                                <img src="{% static 'image/python.png' %}" alt="Python" class="w-10 h-10 object-contain">
+                            </div>
+                            <button class="bg-mauve text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-sage transition-colors duration-300">
+                                Demo
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- AI Card 3 -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 flex flex-col h-full">
+                    <div class="h-48 bg-gray-200 flex items-center justify-center">
+                        <img src="{% static 'image/kaggle.png' %}" alt="Kaggle ML Project" class="w-32 h-32 object-contain">
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h3 class="text-xl font-bold text-evergreen mb-2">Judul Di Sini</h3>
+                        <p class="text-gray-600 text-sm mb-4 flex-grow">
+                            I've explored and analyzed more than 10 datasets from Kaggle, focusing on topics such as customer behavior, health, education, and finance.
+                        </p>
+                        <div class="flex justify-between items-center mt-auto">
+                            <div class="flex space-x-2">
+                                <img src="{% static 'image/kaggle.png' %}" alt="Kaggle" class="w-10 h-10 object-contain">
+                                <img src="{% static 'image/colab.png' %}" alt="Google Colab" class="w-10 h-10 object-contain">
+                            </div>
+                            <button class="bg-mauve text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-sage transition-colors duration-300">
+                                Demo
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SQL Section -->
+        <section id="sql" class="mb-16">
+            <h2 class="text-3xl font-bold text-sage mb-8 text-center">SQL</h2>
+            <div class="flex justify-center">
+                <div class="w-full max-w-sm">
+                    <!-- SQL Card 1 -->
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 flex flex-col h-full">
+                        <div class="h-48 bg-gray-200 flex items-center justify-center">
+                            <img src="{% static 'image/mysql.png' %}" alt="MySQL Project" class="w-32 h-32 object-contain">
+                        </div>
+                        <div class="p-6 flex flex-col flex-grow">
+                            <h3 class="text-xl font-bold text-evergreen mb-2">Judul Di Sini</h3>
+                            <p class="text-gray-600 text-sm mb-4 flex-grow">
+                                I've explored and analyzed more than 10 datasets from Kaggle, focusing on topics such as customer behavior, health, education, and finance.
+                            </p>
+                            <div class="flex justify-between items-center mt-auto">
+                                <div class="flex space-x-2">
+                                    <img src="{% static 'image/mysql.png' %}" alt="MySQL" class="w-10 h-10 object-contain">
+                                    <img src="{% static 'image/postgre.png' %}" alt="PostgreSQL" class="w-10 h-10 object-contain">
+                                </div>
+                                <button class="bg-mauve text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-sage transition-colors duration-300">
+                                    Demo
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- JavaScript for Navigation -->
+    <script>
+        // Carousel functionality
+        const carousels = {
+            'data-viz': { currentSlide: 0, totalSlides: 2 },
+            'research': { currentSlide: 0, totalSlides: 2 },
+            'ml-ai': { currentSlide: 0, totalSlides: 2 },
+            'sql': { currentSlide: 0, totalSlides: 2 }
+        };
+
+        function updateCarousel(carouselId) {
+            const carousel = document.getElementById(`carousel-${carouselId}`);
+            const currentSlide = carousels[carouselId].currentSlide;
+            const totalSlides = carousels[carouselId].totalSlides;
+            const translateX = -currentSlide * 100;
+            carousel.style.transform = `translateX(${translateX}%)`;
+
+            // Update dots
+            for (let i = 0; i < totalSlides; i++) {
+                const dot = document.querySelector(`.dot-indicator-${carouselId}-${i}`);
+                if (dot) {
+                    if (i === currentSlide) {
+                        dot.classList.remove('bg-gray-300');
+                        dot.classList.add('bg-sage');
+                    } else {
+                        dot.classList.remove('bg-sage');
+                        dot.classList.add('bg-gray-300');
+                    }
+                }
+            }
+
+            // Update arrow states
+            const prevArrow = document.querySelector(`button[onclick="prevSlide('${carouselId}')"]`);
+            const nextArrow = document.querySelector(`button[onclick="nextSlide('${carouselId}')"]`);
+            
+            if (prevArrow) {
+                if (currentSlide === 0) {
+                    prevArrow.classList.add('opacity-50', 'cursor-not-allowed');
+                    prevArrow.disabled = true;
+                } else {
+                    prevArrow.classList.remove('opacity-50', 'cursor-not-allowed');
+                    prevArrow.disabled = false;
+                }
+            }
+            
+            if (nextArrow) {
+                if (currentSlide === totalSlides - 1) {
+                    nextArrow.classList.add('opacity-50', 'cursor-not-allowed');
+                    nextArrow.disabled = true;
+                } else {
+                    nextArrow.classList.remove('opacity-50', 'cursor-not-allowed');
+                    nextArrow.disabled = false;
+                }
+            }
+        }
+
+        function nextSlide(carouselId) {
+            const carousel = carousels[carouselId];
+            if (carousel.currentSlide < carousel.totalSlides - 1) {
+                carousel.currentSlide++;
+                updateCarousel(carouselId);
+            }
+        }
+
+        function prevSlide(carouselId) {
+            const carousel = carousels[carouselId];
+            if (carousel.currentSlide > 0) {
+                carousel.currentSlide--;
+                updateCarousel(carouselId);
+            }
+        }
+
+        function goToSlide(carouselId, slideIndex) {
+            carousels[carouselId].currentSlide = slideIndex;
+            updateCarousel(carouselId);
+        }
+
+        // Section navigation
+        function scrollToSection(sectionId) {
+            const section = document.getElementById(sectionId);
+            const offset = 120; // Account for sticky header
+            const elementPosition = section.offsetTop;
+            const offsetPosition = elementPosition - offset;
+
+            window.scrollTo({
+                top: offsetPosition,
+                behavior: "smooth"
+            });
+
+            // Update active button
+            const buttons = document.querySelectorAll('button[onclick*="scrollToSection"]');
+            buttons.forEach(btn => {
+                btn.classList.remove('bg-sage', 'text-white');
+                btn.classList.add('bg-gray-300', 'text-gray-700');
+            });
+            
+            event.target.classList.remove('bg-gray-300', 'text-gray-700');
+            event.target.classList.add('bg-sage', 'text-white');
+        }
+
+        // Update active section on scroll
+        window.addEventListener('scroll', function() {
+            const sections = ['data-visualization', 'research-paper', 'ml-dl-ai', 'sql'];
+            const buttons = document.querySelectorAll('button[onclick*="scrollToSection"]');
+            
+            let current = '';
+            sections.forEach(section => {
+                const element = document.getElementById(section);
+                const rect = element.getBoundingClientRect();
+                if (rect.top <= 150 && rect.bottom >= 150) {
+                    current = section;
+                }
+            });
+
+            buttons.forEach((btn, index) => {
+                btn.classList.remove('bg-sage', 'text-white');
+                btn.classList.add('bg-gray-300', 'text-gray-700');
+                
+                if (sections[index] === current) {
+                    btn.classList.remove('bg-gray-300', 'text-gray-700');
+                    btn.classList.add('bg-sage', 'text-white');
+                }
+            });
+        });
+
+        // Initialize carousel states when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            Object.keys(carousels).forEach(carouselId => {
+                updateCarousel(carouselId);
+            });
+        });
+    </script>
+</body>
+</html>

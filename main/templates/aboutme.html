@@ -1,0 +1,282 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me - Nia Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ek+Mukta:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'sans': ['Ek Mukta', 'sans-serif'],
+                    },
+                    colors: {
+                        'mist': '#F4F3F1',
+                        'peoni': '#F2D2D4',
+                        'mauve': '#D89598',
+                        'sage': '#829672',
+                        'evergreen': '#344C3D'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-mist font-sans min-h-screen">
+    <!-- Navigation -->
+    <nav class="flex justify-center space-x-12 pt-8 pb-4 px-6 text-peoni font-medium text-lg">
+        <a href="/" class="hover:text-sage transition-colors text-xl">Home</a>
+        <a href="/about" class="hover:text-sage transition-colors text-3xl text-mauve font-semibold">About me</a>
+        <a href="/project" class="hover:text-sage transition-colors text-xl">Project</a>
+        <a href="#" class="hover:text-sage transition-colors text-xl">Contact</a>
+    </nav>
+
+    <div class="flex h-screen">
+        <!-- Left Side - Profile Section (Fixed) -->
+        <div class="w-1/4 bg-peoni p-6 flex flex-col items-center justify-start fixed left-0 top-0 h-screen">
+            <!-- Profile Photo -->
+            <div class="w-48 h-48 rounded-full mb-4 shadow-lg mt-8 overflow-hidden border-4 border-mist flex-shrink-0">
+                <img src="{% static 'image/irma.jpeg' %}" alt="Irma Nia Alwijah" class="w-full h-full object-cover">
+            </div>
+
+            <!-- Name -->
+            <h2 class="text-4xl font-bold text-evergreen text-center tracking-wide mb-4">
+                IRMA NIA ALWIJAH
+            </h2>
+
+            <!-- Description Card -->
+            <div class="bg-mist p-4 rounded-lg shadow-md mt-2 mx-2">
+                <p class="text-gray-700 text-sm leading-relaxed text-center">
+                    "Hi! I'm <strong>Nia</strong>, an Information Systems student at Universitas Indonesia who's passionate about making sense of data and turning complex information into impactful stories and solutions. My journey spans research, analytics, machine learning, and dashboard design—where I love blending technical skills with curiosity to solve real-world problems."
+                </p>
+            </div>
+
+            <!-- Download Resume Button -->
+            <button class="bg-evergreen hover:bg-sage text-white font-semibold py-3 px-4 rounded-lg mt-6 mx-2 w-full transition-colors duration-300 shadow-lg text-base mb-4">
+                Download Resume
+            </button>
+        </div>
+
+        <!-- Right Side - Content Section (Scrollable) -->
+        <div class="w-3/4 bg-mist p-12 ml-auto overflow-y-auto h-screen">
+            <!-- About Me Section -->
+            <div class="mb-12">
+                <h1 class="text-5xl font-bold text-sage mb-6">About Me</h1>
+
+                <!-- What I do Section -->
+                <div class="mb-10">
+                    <h3 class="bg-sage text-white py-3 px-6 rounded-lg text-xl font-semibold mb-6">FunFact</h3>
+                    
+                    <!-- 2x2 Grid Layout -->
+                    <div class="grid grid-cols-2 gap-6">
+                        <!-- Data Analysis -->
+                        <div class="bg-mist p-6 rounded-lg shadow-md">
+                            <div class="flex items-start space-x-4">
+                                <div class="w-12 h-12 flex items-center justify-center text-4xl flex-shrink-0 mt-1">📊</div>
+                                <div>
+                                    <h4 class="text-xl font-semibold text-evergreen mb-2">Data Analysis</h4>
+                                    <p class="text-gray-600 leading-relaxed">
+                                        I have explored and analyzed <strong class="text-mauve text-lg">10+ Kaggle datasets</strong>, as well as <strong class="text-mauve text-lg">5+ real-world datasets</strong> from survey respondents, focusing on topics such as customer behavior, health, education, and finance.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Research -->
+                        <div class="bg-mist p-6 rounded-lg shadow-md">
+                            <div class="flex items-start space-x-4">
+                                <div class="w-12 h-12 flex items-center justify-center text-4xl flex-shrink-0 mt-1">🔬</div>
+                                <div>
+                                    <h4 class="text-xl font-semibold text-evergreen mb-2">Research</h4>
+                                    <p class="text-gray-600 leading-relaxed">
+                                        I’ve worked on both individual and collaborative research projects, with <strong class="text-mauve text-lg">3+ research</strong> studies completed. One of my papers, co-authored with several lecturers, is currently under review for <strong class="text-mauve text-lg">publication in an Elsevier journal</strong>.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Data Visualization -->
+                        <div class="bg-mist p-6 rounded-lg shadow-md">
+                            <div class="flex items-start space-x-4">
+                                <div class="w-12 h-12 flex items-center justify-center text-4xl flex-shrink-0 mt-1">📈</div>
+                                <div>
+                                    <h4 class="text-xl font-semibold text-evergreen mb-2">Data Visualization</h4>
+                                    <p class="text-gray-600 leading-relaxed">
+                                        Turning raw data into insightful and engaging visuals is one of my <strong class="text-mauve text-lg">favorite parts</strong> of the process. I’ve created various visualizations in notebooks and built <strong class="text-mauve text-lg">5+ dashboards</strong>.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- ML/DL -->
+                        <div class="bg-mist p-6 rounded-lg shadow-md">
+                            <div class="flex items-start space-x-4">
+                                <div class="w-12 h-12 flex items-center justify-center text-4xl flex-shrink-0 mt-1">🤖</div>
+                                <div>
+                                    <h4 class="text-xl font-semibold text-evergreen mb-2">ML/DL</h4>
+                                    <p class="text-gray-600 leading-relaxed">
+                                        I’m continuously expanding my <strong class="text-mauve text-lg">knowledge of AI</strong> and its practical use cases. So far, I've built and experimented with <strong class="text-mauve text-lg">5+ ML/DL</strong> projects, and developed <strong class="text-mauve text-lg">2 AI-based</strong> applications.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tools, Skills, and Expertise Section -->
+                <div class="mb-10">
+                    <h3 class="bg-sage text-white py-3 px-6 rounded-lg text-xl font-semibold mb-6">Tools, Skills, and Expertise</h3>
+                    
+                    <!-- First Row -->
+                    <div class="grid grid-cols-10 gap-2 mb-6">
+                        <div class="text-center">
+                            <div class="w-14 h-14 flex items-center justify-center mx-auto mb-2">
+                                <img src="{% static 'image/python.png' %}" alt="Python" class="w-12 h-12 object-contain">
+                            </div>
+                            <span class="text-xs font-medium text-gray-700">Python</span>
+                        </div>
+                        <div class="text-center">
+                            <div class="w-14 h-14 flex items-center justify-center mx-auto mb-2">
+                                <img src="{% static 'image/spss.png' %}" alt="SPSS" class="w-12 h-12 object-contain">
+                            </div>
+                            <span class="text-xs font-medium text-gray-700">SPSS</span>
+                        </div>
+                        <div class="text-center">
+                            <div class="w-14 h-14 flex items-center justify-center mx-auto mb-2">
+                                <img src="{% static 'image/tableau.png' %}" alt="Tableau" class="w-12 h-12 object-contain">
+                            </div>
+                            <span class="text-xs font-medium text-gray-700">Tableau</span>
+                        </div>
+                        <div class="text-center">
+                            <div class="w-14 h-14 flex items-center justify-center mx-auto mb-2">
+                                <img src="{% static 'image/powerbi.png' %}" alt="PowerBI" class="w-12 h-12 object-contain">
+                            </div>
+                            <span class="text-xs font-medium text-gray-700">PowerBI</span>
+                        </div>
+                        <div class="text-center">
+                            <div class="w-14 h-14 flex items-center justify-center mx-auto mb-2">
+                                <img src="{% static 'image/excel.png' %}" alt="Excel" class="w-12 h-12 object-contain">
+                            </div>
+                            <span class="text-xs font-medium text-gray-700">Excel</span>
+                        </div>
+                        <div class="text-center">
+                            <div class="w-14 h-14 flex items-center justify-center mx-auto mb-2">
+                                <img src="{% static 'image/colab.png' %}" alt="Colab" class="w-12 h-12 object-contain">
+                            </div>
+                            <span class="text-xs font-medium text-gray-700">Colab</span>
+                        </div>
+                        <div class="text-center">
+                            <div class="w-14 h-14 flex items-center justify-center mx-auto mb-2">
+                                <img src="{% static 'image/mysql.png' %}" alt="MySQL" class="w-12 h-12 object-contain">
+                            </div>
+                            <span class="text-xs font-medium text-gray-700">MySQL</span>
+                        </div>
+                        <div class="text-center">
+                            <div class="w-14 h-14 flex items-center justify-center mx-auto mb-2">
+                                <img src="{% static 'image/postgre.png' %}" alt="PostgreSQL" class="w-12 h-12 object-contain">
+                            </div>
+                            <span class="text-xs font-medium text-gray-700">PostgreSQL</span>
+                        </div>
+                        <div class="text-center">
+                            <div class="w-14 h-14 flex items-center justify-center mx-auto mb-2">
+                                <img src="{% static 'image/java.png' %}" alt="Java" class="w-12 h-12 object-contain">
+                            </div>
+                            <span class="text-xs font-medium text-gray-700">Java</span>
+                        </div>
+                        <div class="text-center">
+                            <div class="w-14 h-14 flex items-center justify-center mx-auto mb-2">
+                                <img src="{% static 'image/kaggle.png' %}" alt="Kaggle" class="w-12 h-12 object-contain">
+                            </div>
+                            <span class="text-xs font-medium text-gray-700">Kaggle</span>
+                        </div>
+                    </div>
+
+                    <!-- Second Row -->
+                    <div class="grid grid-cols-10 gap-2 mb-6">
+                        <div class="text-center">
+                            <div class="w-14 h-14 flex items-center justify-center mx-auto mb-2">
+                                <img src="{% static 'image/django.png' %}" alt="Django" class="w-12 h-12 object-contain">
+                            </div>
+                            <span class="text-xs font-medium text-gray-700">Django</span>
+                        </div>
+                        <div class="text-center">
+                            <div class="w-14 h-14 flex items-center justify-center mx-auto mb-2">
+                                <img src="{% static 'image/flutter.png' %}" alt="Flutter" class="w-12 h-12 object-contain">
+                            </div>
+                            <span class="text-xs font-medium text-gray-700">Flutter</span>
+                        </div>
+                        <div class="text-center">
+                            <div class="w-14 h-14 flex items-center justify-center mx-auto mb-2">
+                                <img src="{% static 'image/github.png' %}" alt="GitHub" class="w-12 h-12 object-contain">
+                            </div>
+                            <span class="text-xs font-medium text-gray-700">GitHub</span>
+                        </div>
+                        <div class="text-center">
+                            <div class="w-14 h-14 flex items-center justify-center mx-auto mb-2">
+                                <img src="{% static 'image/css.png' %}" alt="CSS" class="w-12 h-12 object-contain">
+                            </div>
+                            <span class="text-xs font-medium text-gray-700">CSS</span>
+                        </div>
+                        <div class="text-center">
+                            <div class="w-14 h-14 flex items-center justify-center mx-auto mb-2">
+                                <img src="{% static 'image/tailwind.png' %}" alt="Tailwind CSS" class="w-12 h-12 object-contain">
+                            </div>
+                            <span class="text-xs font-medium text-gray-700">Tailwind CSS</span>
+                        </div>
+                        <div class="text-center">
+                            <div class="w-14 h-14 flex items-center justify-center mx-auto mb-2">
+                                <img src="{% static 'image/figma.png' %}" alt="Figma" class="w-12 h-12 object-contain">
+                            </div>
+                            <span class="text-xs font-medium text-gray-700">Figma</span>
+                        </div>
+                        <div class="text-center">
+                            <div class="w-14 h-14 flex items-center justify-center mx-auto mb-2">
+                                <img src="{% static 'image/canva.png' %}" alt="Canva" class="w-12 h-12 object-contain">
+                            </div>
+                            <span class="text-xs font-medium text-gray-700">Canva</span>
+                        </div>
+                        <div class="text-center">
+                            <div class="w-14 h-14 flex items-center justify-center mx-auto mb-2">
+                                <img src="{% static 'image/word.png' %}" alt="Word" class="w-12 h-12 object-contain">
+                            </div>
+                            <span class="text-xs font-medium text-gray-700">Word</span>
+                        </div>
+                        <div class="text-center">
+                            <div class="w-14 h-14 flex items-center justify-center mx-auto mb-2">
+                                <img src="{% static 'image/powerpoint.png' %}" alt="PowerPoint" class="w-12 h-12 object-contain">
+                            </div>
+                            <span class="text-xs font-medium text-gray-700">PowerPoint</span>
+                        </div>
+                        <div class="text-center">
+                            <div class="w-14 h-14 flex items-center justify-center mx-auto mb-2">
+                                <img src="{% static 'image/dart.png' %}" alt="Dart" class="w-12 h-12 object-contain">
+                            </div>
+                            <span class="text-xs font-medium text-gray-700">Dart</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Work Experiences Section -->
+                <div>
+                    <h3 class="bg-sage text-white py-3 px-6 rounded-lg text-xl font-semibold mb-6">Work Experiences</h3>
+                    
+                    <div class="space-y-6">
+                        <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                            <h4 class="text-lg font-semibold text-gray-800 mb-2">Teaching Assistant of Introduce to Architecture Computer</h4>
+                        </div>
+                        <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                            <h4 class="text-lg font-semibold text-gray-800 mb-2">Teaching Assistant of Introduce to Architecture Computer</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,293 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nia - Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ek+Mukta:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'sans': ['Ek Mukta', 'sans-serif'],
+                    },
+                    colors: {
+                        'mist': '#F4F3F1',
+                        'peoni': '#F2D2D4',
+                        'mauve': '#D89598',
+                        'sage': '#829672',
+                        'evergreen': '#344C3D'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @keyframes bounce-vertical {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        @keyframes slide-horizontal {
+            0%, 100% { transform: translateX(0); }
+            50% { transform: translateX(30px); }
+        }
+
+        @keyframes float-gentle {
+            0%, 100% { transform: translateY(0) translateX(0) rotate(0deg); }
+            25% { transform: translateY(-15px) translateX(10px) rotate(5deg); }
+            50% { transform: translateY(-10px) translateX(-15px) rotate(-3deg); }
+            75% { transform: translateY(-20px) translateX(5px) rotate(2deg); }
+        }
+        
+        .bounce-arrow {
+            animation: bounce-vertical 2s ease-in-out infinite;
+        }
+
+        .bounce-button {
+            animation: bounce-vertical 2.5s ease-in-out infinite;
+        }
+        
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+        
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: #829672; }
+        }
+        
+        .typewriter {
+            overflow: hidden;
+            border-right: .15em solid #829672;
+            white-space: nowrap;
+            margin: 0 auto;
+            letter-spacing: .05em;
+            animation: 
+                typing 3.5s steps(40, end),
+                blink-caret .75s step-end infinite;
+        }
+        
+        .fade-out {
+            animation: fadeOut 1s ease-in-out forwards;
+        }
+        
+        @keyframes fadeOut {
+            to { opacity: 0; }
+        }
+        
+        .fade-in {
+            animation: fadeIn 1s ease-in-out forwards;
+            opacity: 0;
+        }
+        
+        @keyframes fadeIn {
+            to { opacity: 1; }
+        }
+
+        .checkbox-item {
+            background-color: #F4F3F1;
+            transition: all 0.3s ease;
+        }
+        
+        .checkbox-item:hover {
+            transform: translateX(5px);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        @keyframes checkbox-fill {
+            0%, 100% { background-color: transparent; }
+            33.33% { background-color: #D89598; }
+        }
+
+        .checkbox-animate-1 {
+            animation: checkbox-fill 3s infinite;
+            animation-delay: 0s;
+        }
+
+        .checkbox-animate-2 {
+            animation: checkbox-fill 3s infinite;
+            animation-delay: 1s;
+        }
+
+        .checkbox-animate-3 {
+            animation: checkbox-fill 3s infinite;
+            animation-delay: 2s;
+        }
+
+        .floating-matcha {
+            position: absolute;
+            opacity: 0.4;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .floating-matcha:nth-child(1) {
+            top: 10%;
+            left: 15%;
+            animation: bounce-vertical 2.5s ease-in-out infinite;
+            animation-delay: 0s;
+        }
+
+        .floating-matcha:nth-child(2) {
+            top: 20%;
+            right: 10%;
+            animation: slide-horizontal 3s ease-in-out infinite;
+            animation-delay: 0.5s;
+        }
+
+        .floating-matcha:nth-child(3) {
+            top: 35%;
+            left: 5%;
+            animation: float-gentle 4s ease-in-out infinite;
+            animation-delay: 1s;
+        }
+
+        .floating-matcha:nth-child(4) {
+            top: 50%;
+            right: 20%;
+            animation: bounce-vertical 3.2s ease-in-out infinite;
+            animation-delay: 1.5s;
+        }
+
+        .floating-matcha:nth-child(5) {
+            top: 65%;
+            left: 25%;
+            animation: slide-horizontal 2.7s ease-in-out infinite;
+            animation-delay: 2s;
+        }
+
+        .floating-matcha:nth-child(6) {
+            top: 15%;
+            left: 60%;
+            animation: float-gentle 3.5s ease-in-out infinite;
+            animation-delay: 0.3s;
+        }
+
+        .floating-matcha:nth-child(7) {
+            top: 80%;
+            right: 15%;
+            animation: bounce-vertical 2.9s ease-in-out infinite;
+            animation-delay: 1.2s;
+        }
+
+        .floating-matcha:nth-child(8) {
+            top: 40%;
+            left: 80%;
+            animation: slide-horizontal 3.3s ease-in-out infinite;
+            animation-delay: 0.8s;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px) translateX(0px) rotate(0deg) scale(1);
+            }
+            25% {
+                transform: translateY(-40px) translateX(20px) rotate(90deg) scale(1.1);
+            }
+            50% {
+                transform: translateY(-20px) translateX(-30px) rotate(180deg) scale(0.9);
+            }
+            75% {
+                transform: translateY(-60px) translateX(10px) rotate(270deg) scale(1.05);
+            }
+        }
+    </style>
+</head>
+<body class="bg-mist h-screen font-sans overflow-hidden">
+    <!-- Navigation -->
+    <nav class="flex justify-center space-x-12 pt-8 pb-4 px-6 text-peoni font-medium text-lg">
+        <a href="/" class="hover:text-sage transition-colors text-3xl text-mauve font-semibold">Home</a>
+        <a href="/about/" class="hover:text-sage transition-colors text-xl">About me</a>
+        <a href="#" class="hover:text-sage transition-colors text-xl">Project</a>
+        <a href="#" class="hover:text-sage transition-colors text-xl">Contact</a>
+    </nav>
+
+    <!-- Floating Background Elements - Full Screen -->
+    <div class="fixed inset-0 w-full h-full pointer-events-none z-0">
+        <!-- Floating Matcha Images - Fewer and Larger -->
+        <div class="floating-matcha">
+            <div class="w-16 h-16 bg-sage rounded-full opacity-50"></div>
+        </div>
+        <div class="floating-matcha">
+            <div class="w-20 h-20 bg-sage rounded-full opacity-40"></div>
+        </div>
+        <div class="floating-matcha">
+            <div class="w-14 h-14 bg-sage rounded-full opacity-55"></div>
+        </div>
+        <div class="floating-matcha">
+            <div class="w-18 h-18 bg-sage rounded-full opacity-45"></div>
+        </div>
+        <div class="floating-matcha">
+            <div class="w-22 h-22 bg-sage rounded-full opacity-35"></div>
+        </div>
+        <div class="floating-matcha">
+            <div class="w-12 h-12 bg-sage rounded-full opacity-60"></div>
+        </div>
+        <div class="floating-matcha">
+            <div class="w-24 h-24 bg-sage rounded-full opacity-30"></div>
+        </div>
+        <div class="floating-matcha">
+            <div class="w-15 h-15 bg-sage rounded-full opacity-50"></div>
+        </div>
+        
+    </div>
+
+    <!-- Main Content -->
+    <div class="relative z-10 w-full h-screen flex items-center justify-center">
+        <div class="container mx-auto px-16 max-w-6xl">
+            <div class="flex flex-col items-center justify-center space-y-6 -mt-8">
+                <!-- Glass Card Container -->
+                <div class="backdrop-blur-md bg-white/5 border border-white/10 rounded-3xl p-10 shadow-xl w-full max-w-5xl relative z-10">
+                    <!-- Main Title -->
+                    <div class="text-center">
+                        <h1 class="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-extrabold text-evergreen mb-1 leading-tight">Hi, I'm Nia!</h1>
+                        <p class="text-2xl font-medium text-sage text-center mb-0 tracking-widest">
+                            An Information    System   Student<br>
+                            at Universitas    Indonesia
+                        </p>
+                    </div>
+
+                    <!-- Checkbox Items -->
+                    <div class="p-4 -mt-2">
+                        <div class="flex flex-wrap justify-center gap-9">
+                            <div class="flex items-center">
+                                <div class="w-8 h-8 border-2 border-mist rounded mr-4 checkbox-animate-1"></div>
+                                <span class="text-evergreen font-medium text-2xl">Data Analyst</span>
+                            </div>
+                            <div class="flex items-center">
+                                <div class="w-8 h-8 border-2 border-mist rounded mr-4 checkbox-animate-2"></div>
+                                <span class="text-evergreen font-medium text-2xl">Data Scientist</span>
+                            </div>
+                            <div class="flex items-center">
+                                <div class="w-8 h-8 border-2 border-mist rounded mr-4 checkbox-animate-3"></div>
+                                <span class="text-evergreen font-medium text-2xl">AI Researcher</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- More About Me Button -->
+                <div class="text-center">
+                    <button class="bounce-button bg-mauve hover:bg-mauve text-mist font-medium py-3 px-6 rounded-full transition-colors duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 text-base">
+                        More About Me
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Page loaded
+        window.addEventListener('load', function() {
+            console.log('Portfolio page loaded');
+        });
+    </script>
+</body>
+</html>
