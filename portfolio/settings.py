@@ -3,10 +3,10 @@ from pathlib import Path
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = os.environ.get('SECRET_KEY', 'django-insecure-fallback-key-change-in-production')
+SECRET_KEY = os.environ.get('SECRET_KEY', 'django-insecure-fallback-key-for-vercel-deployment')
 
-DEBUG = False  # Always False for production
-ALLOWED_HOSTS = ['127.0.0.1', '.vercel.app']
+DEBUG = False
+ALLOWED_HOSTS = ['*']  # Gunakan * untuk semua domain Vercel
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -48,7 +48,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'portfolio.wsgi.application'
 
-# Database - In-memory untuk serverless
+# Database minimal untuk Vercel
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
@@ -56,16 +56,39 @@ DATABASES = {
     }
 }
 
+# Disable migrations untuk serverless
+class DisableMigrations:
+    def __contains__(self, item):
+        return True
+    def __getitem__(self, item):
+        return None
+
+MIGRATION_MODULES = DisableMigrations()
+
 LANGUAGE_CODE = 'en-us'
 TIME_ZONE = 'UTC'
 USE_I18N = True
 USE_TZ = True
 
-# Static files untuk Vercel
+# Static files
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'main/static'),
-] if os.path.exists(os.path.join(BASE_DIR, 'main/static')) else []
+STATIC_ROOT = '/tmp'
+
+# Disable logging yang bisa cause error
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'console': {
+            'class': 'logging.StreamHandler',
+        },
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['console'],
+            'level': 'ERROR',
+        },
+    },
+}
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
