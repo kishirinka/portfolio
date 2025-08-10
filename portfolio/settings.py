@@ -70,10 +70,13 @@ TIME_ZONE = 'UTC'
 USE_I18N = True
 USE_TZ = True
 
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static'),
+]
+
 # Static files
 STATIC_URL = '/static/'
-STATIC_ROOT = '/tmp'
-
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 # Disable logging yang bisa cause error
 LOGGING = {
     'version': 1,
