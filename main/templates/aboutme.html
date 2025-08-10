@@ -3,16 +3,6 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-                                                                        <h4 class="text-lg font-semibold text-evergreen mb-2">ML/DL</h4>
-                                    <p class="text-gray-600 leading-relaxed text-sm">
-                                        I'm continuously expanding my <strong class="text-mauve text-base">knowledge of AI</strong> and its practical use cases. So far, I've built and experimented with <strong class="text-mauve text-base">3+ ML/DL</strong> projects, and developed <strong class="text-mauve text-base">2 AI-based</strong> applications.
-                                    </p>                <h4 class="text-lg font-semibold text-evergreen mb-2">Data Visualization</h4>
-                                    <p class="text-gray-600 leading-relaxed text-sm">
-                                        Turning raw data into insightful and engaging visuals is one of my <strong class="text-mauve text-base">favorite parts</strong> of the process. I've created various visualizations in notebooks and built <strong class="text-mauve text-base">5+ dashboards</strong>.
-                                    </p>                <h4 class="text-lg font-semibold text-evergreen mb-2">Research</h4>
-                                    <p class="text-gray-600 leading-relaxed text-sm">
-                                        I've worked on both individual and collaborative research projects, with <strong class="text-mauve text-base">3+ research</strong> studies completed. One of my papers, co-authored with several lecturers, is currently under review for <strong class="text-mauve text-base">publication in an Elsevier journal</strong>.
-                                    </p>a name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Me - Nia Portfolio</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -39,50 +29,50 @@
 </head>
 <body class="bg-mist font-sans min-h-screen">
     <!-- Navigation -->
-    <nav class="flex justify-center space-x-12 pt-8 pb-4 px-6 text-peoni font-medium text-base">
-        <a href="/" class="hover:text-sage transition-colors text-lg">Home</a>
-        <a href="/about" class="hover:text-sage transition-colors text-2xl text-mauve font-semibold">About me</a>
-        <a href="/project" class="hover:text-sage transition-colors text-lg">Project</a>
-        <a href="#" class="hover:text-sage transition-colors text-lg">Contact</a>
+    <nav class="flex justify-center space-x-4 sm:space-x-8 lg:space-x-12 pt-4 sm:pt-6 lg:pt-8 pb-4 px-2 sm:px-4 lg:px-6 text-peoni font-medium text-sm sm:text-base">
+        <a href="/" class="hover:text-sage transition-colors text-base sm:text-lg">Home</a>
+        <a href="/about" class="hover:text-sage transition-colors text-xl sm:text-2xl text-mauve font-semibold">About me</a>
+        <a href="/project" class="hover:text-sage transition-colors text-base sm:text-lg">Project</a>
+        <a href="#" class="hover:text-sage transition-colors text-base sm:text-lg">Contact</a>
     </nav>
 
-    <div class="flex h-screen">
-        <!-- Left Side - Profile Section (Fixed) -->
-        <div class="w-1/4 bg-peoni p-6 flex flex-col items-center justify-start fixed left-0 top-0 h-screen">
+    <div class="flex flex-col lg:flex-row min-h-screen">
+        <!-- Left Side - Profile Section -->
+        <div class="w-full lg:w-1/4 bg-peoni p-4 lg:p-6 flex flex-col items-center justify-start lg:fixed lg:left-0 lg:top-0 lg:h-screen">
             <!-- Profile Photo -->
-            <div class="w-48 h-48 rounded-full mb-4 shadow-lg mt-8 overflow-hidden border-4 border-mist flex-shrink-0">
+            <div class="w-32 h-32 sm:w-40 sm:h-40 lg:w-48 lg:h-48 rounded-full mb-3 shadow-lg mt-4 overflow-hidden border-4 border-mist flex-shrink-0">
                 <img src="{% static 'image/irma.jpeg' %}" alt="Irma Nia Alwijah" class="w-full h-full object-cover">
             </div>
 
             <!-- Name -->
-            <h2 class="text-3xl font-bold text-evergreen text-center tracking-wide mb-4">
+            <h2 class="text-2xl sm:text-3xl font-bold text-evergreen text-center tracking-wide mb-3">
                 IRMA NIA ALWIJAH
             </h2>
 
             <!-- Description Card -->
-            <div class="bg-mist p-4 rounded-lg shadow-md mt-2 mx-2">
-                <p class="text-gray-700 text-xs leading-relaxed text-center">
+            <div class="bg-mist p-3 rounded-lg shadow-md mt-1 mx-2 w-full sm:w-11/12 lg:w-full">
+                <p class="text-gray-700 text-xs sm:text-sm leading-relaxed text-center">
                     "Hi! I'm <strong>Nia</strong>, an Information Systems student at Universitas Indonesia who's passionate about making sense of data and turning complex information into impactful stories and solutions. My journey spans research, analytics, machine learning, and dashboard design—where I love blending technical skills with curiosity to solve real-world problems."
                 </p>
             </div>
 
             <!-- Download Resume Button -->
-            <button class="bg-evergreen hover:bg-sage text-white font-semibold py-3 px-4 rounded-lg mt-6 mx-2 w-full transition-colors duration-300 shadow-lg text-base mb-4">
+            <button class="bg-evergreen hover:bg-sage text-white font-semibold py-2 px-4 rounded-lg mt-4 mx-2 w-11/12 sm:w-3/4 lg:w-full transition-colors duration-300 shadow-lg text-sm sm:text-base">
                 Download Resume
             </button>
         </div>
 
         <!-- Right Side - Content Section (Scrollable) -->
-        <div class="w-3/4 bg-mist p-12 ml-auto overflow-y-auto h-screen">
+        <div class="w-full lg:w-3/4 bg-mist p-4 sm:p-8 lg:p-12 lg:ml-auto overflow-y-auto">
             <!-- About Me Section -->
             <div class="mb-12">
 
                 <!-- What I do Section -->
-                <div class="bg-mist p-6 rounded-lg shadow-md">
-                    <h1 class="text-4xl font-bold text-sage mb-6">FunFact</h1>
+                <div class="bg-mist p-4 sm:p-6 rounded-lg shadow-md">
+                    <h1 class="text-3xl sm:text-4xl font-bold text-sage mb-4 sm:mb-6">FunFact</h1>
                     
-                    <!-- 2x2 Grid Layout -->
-                    <div class="grid grid-cols-2 gap-6">
+                    <!-- Responsive Grid Layout -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
                         <!-- Data Analysis -->
                         <div class="bg-mist p-6 rounded-lg shadow-md">
                             <div class="flex items-start space-x-4">
@@ -138,11 +128,11 @@
                 </div>
 
                 <!-- Tools, Skills, and Expertise Section -->
-                <div class="bg-mist p-6 rounded-lg shadow-md mt-16">
-                    <h1 class="text-4xl font-bold text-sage mb-6">Tools, Skills, and Expertise</h1>
+                <div class="bg-mist p-4 sm:p-6 rounded-lg shadow-md mt-8 sm:mt-16">
+                    <h1 class="text-3xl sm:text-4xl font-bold text-sage mb-4 sm:mb-6">Tools, Skills, and Expertise</h1>
                     
-                    <!-- First Row -->
-                    <div class="grid grid-cols-10 gap-2 mb-6">
+                    <!-- First Row - Responsive Grid -->
+                    <div class="grid grid-cols-5 sm:grid-cols-7 md:grid-cols-8 lg:grid-cols-10 gap-2 mb-4 sm:mb-6">
                         <div class="text-center">
                             <div class="w-14 h-14 flex items-center justify-center mx-auto mb-2">
                                 <img src="{% static 'image/python.png' %}" alt="Python" class="w-12 h-12 object-contain">

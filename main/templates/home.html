@@ -130,58 +130,67 @@
 
         .floating-matcha:nth-child(1) {
             top: 10%;
-            left: 15%;
+            left: 5%;
             animation: bounce-vertical 2.5s ease-in-out infinite;
             animation-delay: 0s;
         }
 
         .floating-matcha:nth-child(2) {
             top: 20%;
-            right: 10%;
+            right: 5%;
             animation: slide-horizontal 3s ease-in-out infinite;
             animation-delay: 0.5s;
         }
 
         .floating-matcha:nth-child(3) {
             top: 35%;
-            left: 5%;
+            left: 2%;
             animation: float-gentle 4s ease-in-out infinite;
             animation-delay: 1s;
         }
 
         .floating-matcha:nth-child(4) {
             top: 50%;
-            right: 20%;
+            right: 8%;
             animation: bounce-vertical 3.2s ease-in-out infinite;
             animation-delay: 1.5s;
         }
 
         .floating-matcha:nth-child(5) {
             top: 65%;
-            left: 25%;
+            left: 10%;
             animation: slide-horizontal 2.7s ease-in-out infinite;
             animation-delay: 2s;
         }
 
         .floating-matcha:nth-child(6) {
             top: 15%;
-            left: 60%;
+            left: 40%;
             animation: float-gentle 3.5s ease-in-out infinite;
             animation-delay: 0.3s;
         }
 
         .floating-matcha:nth-child(7) {
             top: 80%;
-            right: 15%;
+            right: 8%;
             animation: bounce-vertical 2.9s ease-in-out infinite;
             animation-delay: 1.2s;
         }
 
         .floating-matcha:nth-child(8) {
             top: 40%;
-            left: 80%;
+            left: 60%;
             animation: slide-horizontal 3.3s ease-in-out infinite;
             animation-delay: 0.8s;
+        }
+
+        @media (max-width: 640px) {
+            .floating-matcha div {
+                transform: scale(0.7);
+            }
+            .floating-matcha:nth-child(even) {
+                display: none;
+            }
         }
 
         @keyframes float {
@@ -202,11 +211,11 @@
 </head>
 <body class="bg-mist h-screen font-sans overflow-hidden">
     <!-- Navigation -->
-    <nav class="flex justify-center space-x-12 pt-8 pb-4 px-6 text-peoni font-medium text-lg">
-        <a href="/" class="hover:text-sage transition-colors text-3xl text-mauve font-semibold">Home</a>
-        <a href="/about/" class="hover:text-sage transition-colors text-xl">About me</a>
-        <a href="/project" class="hover:text-sage transition-colors text-xl">Project</a>
-        <a href="/contact" class="hover:text-sage transition-colors text-xl">Contact</a>
+    <nav class="flex justify-center space-x-4 sm:space-x-8 lg:space-x-12 pt-4 sm:pt-6 lg:pt-8 pb-4 px-2 sm:px-4 lg:px-6 text-peoni font-medium">
+        <a href="/" class="hover:text-sage transition-colors text-2xl sm:text-3xl text-mauve font-semibold">Home</a>
+        <a href="/about/" class="hover:text-sage transition-colors text-lg sm:text-xl">About me</a>
+        <a href="/project" class="hover:text-sage transition-colors text-lg sm:text-xl">Project</a>
+        <a href="/contact" class="hover:text-sage transition-colors text-lg sm:text-xl">Contact</a>
     </nav>
 
     <!-- Floating Background Elements - Full Screen -->
@@ -241,33 +250,33 @@
 
     <!-- Main Content -->
     <div class="relative z-10 w-full h-screen flex items-center justify-center">
-        <div class="container mx-auto px-16 max-w-6xl">
-            <div class="flex flex-col items-center justify-center space-y-6 -mt-8">
+        <div class="container mx-auto px-4 sm:px-8 lg:px-16 max-w-6xl">
+            <div class="flex flex-col items-center justify-center space-y-4 sm:space-y-6 -mt-4 sm:-mt-8">
                 <!-- Glass Card Container -->
-                <div class="backdrop-blur-md bg-white/5 border border-white/10 rounded-3xl p-10 shadow-xl w-full max-w-5xl relative z-10">
+                <div class="backdrop-blur-md bg-white/5 border border-white/10 rounded-2xl sm:rounded-3xl p-4 sm:p-6 lg:p-10 shadow-xl w-full max-w-5xl relative z-10">
                     <!-- Main Title -->
                     <div class="text-center">
-                        <h1 class="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-extrabold text-evergreen mb-1 leading-tight">Hi, I'm Nia!</h1>
-                        <p class="text-2xl font-medium text-sage text-center mb-0 tracking-widest">
-                            An Information    System   Student<br>
-                            at Universitas    Indonesia
+                        <h1 class="text-4xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-extrabold text-evergreen mb-1 leading-tight">Hi, I'm Nia!</h1>
+                        <p class="text-lg sm:text-xl lg:text-2xl font-medium text-sage text-center mb-0 tracking-wide sm:tracking-widest">
+                            An Information System Student<br>
+                            at Universitas Indonesia
                         </p>
                     </div>
 
                     <!-- Checkbox Items -->
-                    <div class="p-4 -mt-2">
-                        <div class="flex flex-wrap justify-center gap-9">
+                    <div class="p-2 sm:p-4 -mt-1 sm:-mt-2">
+                        <div class="flex flex-col sm:flex-row flex-wrap justify-center gap-4 sm:gap-6 lg:gap-9">
                             <div class="flex items-center">
-                                <div class="w-8 h-8 border-2 border-mist rounded mr-4 checkbox-animate-1"></div>
-                                <span class="text-evergreen font-medium text-2xl">Data Analyst</span>
+                                <div class="w-6 h-6 sm:w-8 sm:h-8 border-2 border-mist rounded mr-3 sm:mr-4 checkbox-animate-1"></div>
+                                <span class="text-evergreen font-medium text-lg sm:text-xl lg:text-2xl">Data Analyst</span>
                             </div>
                             <div class="flex items-center">
-                                <div class="w-8 h-8 border-2 border-mist rounded mr-4 checkbox-animate-2"></div>
-                                <span class="text-evergreen font-medium text-2xl">Data Scientist</span>
+                                <div class="w-6 h-6 sm:w-8 sm:h-8 border-2 border-mist rounded mr-3 sm:mr-4 checkbox-animate-2"></div>
+                                <span class="text-evergreen font-medium text-lg sm:text-xl lg:text-2xl">Data Scientist</span>
                             </div>
                             <div class="flex items-center">
-                                <div class="w-8 h-8 border-2 border-mist rounded mr-4 checkbox-animate-3"></div>
-                                <span class="text-evergreen font-medium text-2xl">AI Researcher</span>
+                                <div class="w-6 h-6 sm:w-8 sm:h-8 border-2 border-mist rounded mr-3 sm:mr-4 checkbox-animate-3"></div>
+                                <span class="text-evergreen font-medium text-lg sm:text-xl lg:text-2xl">AI Researcher</span>
                             </div>
                         </div>
                     </div>
