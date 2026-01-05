@@ -31,11 +31,37 @@
 </head>
 <body class="bg-mist font-sans min-h-screen">
     <!-- Navigation -->
-    <nav class="flex justify-center space-x-4 sm:space-x-8 lg:space-x-12 pt-4 sm:pt-6 lg:pt-8 pb-4 px-2 sm:px-4 lg:px-6 text-peoni font-medium">
-        <a href="/" class="hover:text-sage transition-colors text-sm sm:text-base">Home</a>
-        <a href="/about" class="hover:text-sage transition-colors text-sm sm:text-base">About me</a>
-        <a href="/project" class="hover:text-sage transition-colors text-lg sm:text-xl text-mauve font-semibold">Project</a>
-        <a href="/contact" class="hover:text-sage transition-colors text-sm sm:text-base">Contact</a>
+    <nav class="relative">
+        <!-- Desktop Navigation -->
+        <div class="hidden sm:flex justify-center space-x-4 sm:space-x-8 lg:space-x-12 pt-4 sm:pt-6 lg:pt-8 pb-4 px-2 sm:px-4 lg:px-6 text-peoni font-medium">
+            <a href="/" class="hover:text-sage transition-colors text-sm sm:text-base">Home</a>
+            <a href="/about" class="hover:text-sage transition-colors text-sm sm:text-base">About me</a>
+            <a href="/project" class="hover:text-sage transition-colors text-lg sm:text-xl text-mauve font-semibold">Project</a>
+            <a href="/contact" class="hover:text-sage transition-colors text-sm sm:text-base">Contact</a>
+        </div>
+        
+        <!-- Mobile Navigation -->
+        <div class="sm:hidden">
+            <!-- Mobile Menu Button -->
+            <div class="flex justify-between items-center pt-4 pb-4 px-4">
+                <a href="/" class="text-mauve font-bold text-xl">Nia</a>
+                <button id="mobile-menu-btn" class="text-peoni hover:text-sage transition-colors p-2">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+            
+            <!-- Mobile Menu Dropdown -->
+            <div id="mobile-menu" class="hidden absolute top-full left-0 right-0 bg-mist shadow-lg z-50">
+                <div class="px-4 py-2 space-y-2">
+                    <a href="/" class="block py-3 px-2 text-peoni hover:text-sage transition-colors">Home</a>
+                    <a href="/about" class="block py-3 px-2 text-peoni hover:text-sage transition-colors">About me</a>
+                    <a href="/project" class="block py-3 px-2 text-mauve font-semibold text-lg border-b border-peoni">Project</a>
+                    <a href="/contact" class="block py-3 px-2 text-peoni hover:text-sage transition-colors">Contact</a>
+                </div>
+            </div>
+        </div>
     </nav>
 
     <div class="container mx-auto px-8 py-12">
@@ -76,16 +102,25 @@
                                     </div>
                                     <div class="p-3 sm:p-6 flex flex-col flex-grow">
                                         <h3 class="text-base sm:text-lg font-bold text-evergreen mb-2">Analisis Komprehensif Kasus TBC dan Penanganannya di Jawa Barat (2019-2024)</h3>
-                                        <p class="text-evergreen text-[10px] sm:text-xs mb-4 flex-grow">
-                                            This interactive dashboard presents a comprehensive analysis of TB cases in West Java (2019-2024) with a total of 880,861 cases and 16,642 deaths. Through dynamic visualizations that can be explored interactively, the dashboard helps stakeholders monitor TB trends, identify priority areas, and support strategic decision-making for data-driven TB elimination programs in real-time.
-                                        </p>
+                                        
+                                        <div class="text-evergreen text-[10px] sm:text-xs mb-4 flex-grow">
+                                            <p class="mb-2"><strong>Problem:</strong> Identifying TB case patterns and trends to support data-driven TB elimination programs</p>
+                                            
+                                            <p class="mb-1"><strong>Key Insights:</strong></p>
+                                            <ul class="list-disc list-inside mb-2 space-y-0.5">
+                                                <li>880,861 total cases with 16,642 deaths (2019-2024)</li>
+                                                <li>Treatment graph shows declining cases under treatment vs recovery rates, indicating successful treatment outcomes</li>
+                                            </ul>
+                                            
+                                            <p><strong>Impact:</strong> Interactive dashboard supports real-time strategic decision-making for health stakeholders</p>
+                                        </div>
                                         <div class="flex justify-between items-center mt-auto">
                                             <div class="flex space-x-2">
-                                                <img src="{% static 'image/excel.png' %}" alt="Tableau" class="w-8 h-8 sm:w-10 sm:h-10 object-contain">
+                                                <img src="{% static 'image/excel.png' %}" alt="Excel" class="w-8 h-8 sm:w-10 sm:h-10 object-contain">
                                             </div>
-                                            <a href="https://univindonesia-my.sharepoint.com/:x:/g/personal/irma_nia_office_ui_ac_id/ESwCtYAddEhMk-BJvsKFKUABWKXkrg1AN963O3qOphBWdg?e=vptRPP" target="_blank" class="bg-mauve text-white px-3 sm:px-4 py-1.5 sm:py-2 rounded-lg text-xs sm:text-sm font-semibold hover:bg-peoni transition-colors duration-300">
+                                            {% comment %} <a href="https://univindonesia-my.sharepoint.com/:x:/g/personal/irma_nia_office_ui_ac_id/ESwCtYAddEhMk-BJvsKFKUABWKXkrg1AN963O3qOphBWdg?e=vptRPP" target="_blank" class="bg-mauve text-white px-3 sm:px-4 py-1.5 sm:py-2 rounded-lg text-xs sm:text-sm font-semibold hover:bg-peoni transition-colors duration-300">
                                                 Demo
-                                            </a>
+                                            </a> {% endcomment %}
                                         </div>
                                     </div>
                                 </div>
@@ -96,16 +131,26 @@
                                         <img src="{% static 'image/cosmetic.png' %}" alt="Cosmetic Dashboard" class="w-full h-full object-cover">
                                     </div>
                                     <div class="p-3 sm:p-6 flex flex-col flex-grow">
-                                        <h3 class="text-base sm:text-lg font-bold text-evergreen mb-2">COSMETIC BRAND SOCIAL MEDIA POST PERFORMANCE DASHBOARD</h3>
-                                        <p class="text-evergreen text-[10px] sm:text-xs mb-4 flex-grow">
-                                            This cosmetic brand utilized four content types throughout the year: photos, videos, status updates, and links. Content performance analysis reveals that link posts generate high reach with low engagement, while photo content achieves superior engagement rates. Temporal optimization shows Sunday as the optimal posting day due to peak engagement rates. Posting schedule analysis identifies 5 AM and evening hours as the most effective times for content distribution, maximizing audience interaction and overall campaign performance.
-                                        </p>
+                                        <h3 class="text-base sm:text-lg font-bold text-evergreen mb-2">Cosmetic Brand Social Media Performance Dashboard</h3>
+                                        
+                                        <div class="text-evergreen text-[10px] sm:text-xs mb-4 flex-grow">
+                                            <p class="mb-2"><strong>Problem:</strong> Optimizing social media content strategy</p>
+                                            
+                                            <p class="mb-1"><strong>Key Insights:</strong></p>
+                                            <ul class="list-disc list-inside mb-2 space-y-0.5">
+                                                <li>Photo content generates highest engagement rates</li>
+                                                <li>Link posts achieve high reach but low engagement</li>
+                                                <li>Optimal posting times: Sunday, 5 AM & evening hours</li>
+                                            </ul>
+                                            
+                                            <p><strong>Impact:</strong> Insights support data-driven content strategy and posting schedule decisions</p>
+                                        </div>
                                         <div class="flex justify-between items-center mt-auto">
                                             <div class="flex space-x-2">
-                                                <img src="{% static 'image/tableau.png' %}" alt="Power BI" class="w-8 h-8 sm:w-10 sm:h-10 object-contain">
+                                                <img src="{% static 'image/tableau.png' %}" alt="Tableau" class="w-8 h-8 sm:w-10 sm:h-10 object-contain">
                                             </div>
-                                            <a href="https://univindonesia-my.sharepoint.com/:v:/g/personal/irma_nia_office_ui_ac_id/EUbbNyafwq5FieVzCjo0mkUBytYFn1imOkGmjm5r3XInIg?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=lgDmLU" target="_blank" class="bg-mauve text-white px-3 sm:px-4 py-1.5 sm:py-2 rounded-lg text-xs sm:text-sm font-semibold hover:bg-peoni transition-colors duration-300">
-                                                Demo
+                                           <a href="https://public.tableau.com/views/COSMETICBRANDSOCIALMEDIAPOSTPERFORMANCEDASHBOARD/Dashboard2?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link" target="_blank" class="bg-mauve text-white px-3 sm:px-4 py-1.5 sm:py-2 rounded-lg text-xs sm:text-sm font-semibold hover:bg-peoni transition-colors duration-300">
+                                                See Dashboard
                                             </a>
                                         </div>
                                     </div>
@@ -114,19 +159,29 @@
                                 <!-- Project Card 3 -->
                                 <div class="bg-mist rounded-lg shadow-lg overflow-hidden hover:shadow-xl hover:-translate-y-2 hover:bg-mist transition-all duration-300 flex flex-col h-full">
                                     <div class="h-36 sm:h-48 bg-gray-200 overflow-hidden">
-                                        <img src="{% static 'image/diabetes.png' %}" alt="Python Analytics Project" class="w-full h-full object-cover">
+                                        <img src="{% static 'image/diabetes.png' %}" alt="Health Analytics Project" class="w-full h-full object-cover">
                                     </div>
                                     <div class="p-3 sm:p-6 flex flex-col flex-grow">
-                                        <h3 class="text-base sm:text-lg font-bold text-evergreen mb-2">Lifestyle and Obesity Risk Analysis: Understanding how daily habits influence obesity levels </h3>
-                                        <p class="text-evergreen text-[10px] sm:text-xs mb-4 flex-grow">
-                                            Based on 20,758 respondents, the data reveals significant diabetes risk patterns. Gender distribution shows Type 3 diabetes predominantly affects males while Type 2 primarily occurs in females. Smoking behavior strongly correlates with increased diabetes risk across all participants. Family history serves as a protective factor, with individuals lacking hereditary diabetes history showing substantially lower risk. Age analysis indicates diabetes onset peaks between 35-40 years.
-                                        </p>
+                                        <h3 class="text-base sm:text-lg font-bold text-evergreen mb-2">Lifestyle and Diabetes Risk Analysis</h3>
+                                        
+                                        <div class="text-evergreen text-[10px] sm:text-xs mb-4 flex-grow">
+                                            <p class="mb-2"><strong>Problem:</strong> Identifying diabetes risk factors based on lifestyle patterns and demographics</p>
+                                            
+                                            <p class="mb-1"><strong>Key Insights:</strong></p>
+                                            <ul class="list-disc list-inside mb-2 space-y-0.5">
+                                                <li>Gender distribution: Type 3 diabetes predominantly affects males, Type 2 affects females</li>
+                                                <li>Smoking behavior strongly correlates with increased diabetes risk</li>
+                                                <li>Diabetes onset peaks between ages 35-40 years</li>
+                                            </ul>
+                                            
+                                            <p><strong>Impact:</strong> Analysis of 20,758 respondents provides insights for demographic and lifestyle-based diabetes prevention programs</p>
+                                        </div>
                                         <div class="flex justify-between items-center mt-auto">
                                             <div class="flex space-x-2">
-                                                <img src="{% static 'image/tableau.png' %}" alt="Python" class="w-8 h-8 sm:w-10 sm:h-10 object-contain">
+                                                <img src="{% static 'image/tableau.png' %}" alt="Tableau" class="w-8 h-8 sm:w-10 sm:h-10 object-contain">
                                             </div>
-                                            <a href="https://univindonesia-my.sharepoint.com/:v:/g/personal/irma_nia_office_ui_ac_id/EbXDukPdm95Lu_VHXflrRxQBhsNHh4fgfBn_hbrLQ9o8aQ?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=aXFCKc" target="_blank" class="bg-mauve text-white px-3 sm:px-4 py-1.5 sm:py-2 rounded-lg text-xs sm:text-sm font-semibold hover:bg-peoni transition-colors duration-300">
-                                                Demo
+                                            <a href="https://public.tableau.com/views/obesitasdashboard/Dashboard1?:language=en-US&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link" target="_blank" class="bg-mauve text-white px-3 sm:px-4 py-1.5 sm:py-2 rounded-lg text-xs sm:text-sm font-semibold hover:bg-peoni transition-colors duration-300">
+                                                See Dashboard
                                             </a>
                                         </div>
                                     </div>
@@ -134,7 +189,7 @@
                             </div>
                         </div>
 
-                        <!-- Slide 2 -->
+                        {% comment %} <!-- Slide 2 -->
                         <div class="w-full flex-shrink-0">
                             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 px-8 justify-items-center">
                                 <!-- Project Card 4 -->
@@ -154,7 +209,7 @@
                 
                                         </div>
                                     </div>
-                                </div>
+                                </div> {% endcomment %}
 
                                 {% comment %} <!-- Project Card 5 -->
                                 <div class="bg-mist rounded-lg shadow-lg overflow-hidden hover:shadow-xl hover:-translate-y-2 hover:bg-mist transition-all duration-300 flex flex-col h-full">
@@ -199,8 +254,8 @@
                                         </div>
                                     </div>
                                 </div> {% endcomment %}
-                            </div>
-                        </div>
+                            {% comment %} </div>
+                        </div> {% endcomment %}
                     </div>
                 </div>
 
@@ -217,10 +272,10 @@
                 </button>
 
                 <!-- Dots Indicator -->
-                <div class="flex justify-center mt-6 space-x-2">
+                {% comment %} <div class="flex justify-center mt-6 space-x-2">
                     <button onclick="goToSlide('data-viz', 0)" class="w-3 h-3 rounded-full bg-sage dot-indicator-data-viz-0"></button>
                     <button onclick="goToSlide('data-viz', 1)" class="w-3 h-3 rounded-full bg-gray-300 dot-indicator-data-viz-1"></button>
-                </div>
+                </div> {% endcomment %}
             </div>
         </section>
 
@@ -237,20 +292,21 @@
                                 <!-- Research Card 1 -->
                                 <div class="bg-mist rounded-lg shadow-lg overflow-hidden hover:shadow-xl hover:-translate-y-2 transition-all duration-300 flex flex-col h-full">
                                     <div class="h-48 bg-gray-200 overflow-hidden">
-                                        <img src="{% static 'image/fedhgn.png' %}" alt="GitHub Research" class="w-full h-full object-cover">
+                                        <img src="{% static 'image/ecg.png' %}" alt="ECG Research" class="w-full h-full object-cover">
                                     </div>
                                     <div class="p-6 flex flex-col flex-grow">
-                                        <h3 class="text-base sm:text-base font-bold text-evergreen mb-2">FedHGN untuk Deteksi Kejahatan Transaksi dengan Kolaborasi antar Institusi Keuangan tanpa Melanggar Privasi Data</h3>
+                                        <h3 class="text-base sm:text-base font-bold text-evergreen mb-2">Sistem Diagnosis EKG Otomatis Menggunakan  ResNet dan CNN Multi-Branch dengan Pipeline Validasi Klinis</h3>
                                         <p class="text-evergreen text-[10px] sm:text-xs mb-4 flex-grow">
-                                            The FedHGN (Federated Heterogeneous Graph Network) enables financial crime detection through inter-institutional collaboration while preserving data privacy. Experimental results on the IBM AML dataset demonstrate an average accuracy of 97.19% with a macro F1-score of 49.29%, showcasing the model's effectiveness in detecting fraudulent transactions across federated financial institutions without compromising sensitive customer data.
+                                            Designed a multi-branch deep learning model combining 1D ResNet and 2D CNN architectures for automated ECG classification. Evaluated on the PTB-XL dataset, the system achieved a macro-AUC of 0.9424 and generated clinically interpretable visual reports through a post-hoc validation pipeline.
                                         </p>
                                         <div class="flex justify-between items-center mt-auto">
                                             <div class="flex space-x-2">
                                                 <img src="{% static 'image/github.png' %}" alt="GitHub" class="w-10 h-10 object-contain">
                                                 <img src="{% static 'image/python.png' %}" alt="Python" class="w-10 h-10 object-contain">
+                                                <img src="{% static 'image/colab.png' %}" alt="Google Colab" class="w-10 h-10 object-contain">
                                                 <img src="{% static 'image/word.png' %}" alt="Word" class="w-10 h-10 object-contain">
                                             </div>
-                                            <a href="https://univindonesia-my.sharepoint.com/:b:/g/personal/irma_nia_office_ui_ac_id/EUbvWzw9aHVKhTFwm21BdR0B0vffavEKUau5VEUkDp1Nzw?e=PcegpN" target="_blank" class="bg-mauve text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-peoni transition-colors duration-300">
+                                            <a href="https://univindonesia-my.sharepoint.com/:b:/g/personal/irma_nia_office_ui_ac_id/EddBW2uDevtCp7UQ2q2vmJcByvROQGHeJEuXSxS3RfuLdw?e=pwglc1" target="_blank" class="bg-mauve text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-peoni transition-colors duration-300">
                                                 Read
                                             </a>
                                         </div>
@@ -260,17 +316,17 @@
                                 <!-- Research Card 2 -->
                                 <div class="bg-mist rounded-lg shadow-lg overflow-hidden hover:shadow-xl hover:-translate-y-2 transition-all duration-300 flex flex-col h-full">
                                     <div class="h-48 bg-gray-200 overflow-hidden">
-                                        <img src="{% static 'image/megathrust.png' %}" alt="Google Colab Research" class="w-full h-full object-cover">
+                                        <img src="{% static 'image/megathrust.png' %}" alt="Megathrust Research" class="w-full h-full object-cover">
                                     </div>
                                     <div class="p-6 flex flex-col flex-grow">
-                                        <h3 class="text-base sm:text-base font-bold text-evergreen mb-2">Risk Communication through Social Media: Exploring the Relationships between Megathrust Information, Anxiety, and Life Satisfaction</h3>
+                                        <h3 class="text-base sm:text-base font-bold text-evergreen mb-2">Risk Communication through Social Media: Exploring the  Relationships between Megathrust Information, Anxiety, and Life Satisfaction</h3>
                                         <p class="text-evergreen text-[10px] sm:text-xs mb-4 flex-grow">
-                                            Social media has evolved into a primary source of information regarding disasters. Data were collected through a survey of 351 respondents from various provinces in Indonesia. These results provide new evidence regarding how social media information about megathrust risks affects psychological outcomes and life satisfaction. 
+                                            Conducted quantitative analysis using survey data from 351 respondents to examine the relationship between disaster-related social media information, anxiety levels, and life satisfaction. Applied PLS-SEM analysis using SmartPLS to validate measurement and structural models, providing empirical insights into risk communication dynamics on social media platforms.
                                         </p>
                                         <div class="flex justify-between items-center mt-auto">
                                             <div class="flex space-x-2">
-                                                <img src="{% static 'image/SmartPLS.png' %}" alt="Google Colab" class="w-10 h-10 object-contain">
-                                                <img src="{% static 'image/word.png' %}" alt="Kaggle" class="w-10 h-10 object-contain">
+                                                <img src="{% static 'image/SmartPLS.png' %}" alt="SmartPLS" class="w-10 h-10 object-contain">
+                                                <img src="{% static 'image/word.png' %}" alt="Word" class="w-10 h-10 object-contain">
                                             </div>
                                             <a href="https://univindonesia-my.sharepoint.com/:b:/g/personal/irma_nia_office_ui_ac_id/EaiykbP6-VNDi9a28RswZM8B7fUIL9RJNPorVAh3SHUaVQ?e=09ikiq" target="_blank" class="bg-mauve text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-peoni transition-colors duration-300">
                                                 Read
@@ -282,21 +338,18 @@
                                 <!-- Research Card 3 -->
                                 <div class="bg-mist rounded-lg shadow-lg overflow-hidden hover:shadow-xl hover:-translate-y-2 transition-all duration-300 flex flex-col h-full">
                                     <div class="h-48 bg-gray-200 overflow-hidden">
-                                        <img src="{% static 'image/ecg.png' %}" alt="ecg" class="w-full h-full object-cover">
+                                        <img src="{% static 'image/sigma.png' %}" alt="Jakarta SIGMA Research" class="w-full h-full object-cover">
                                     </div>
                                     <div class="p-6 flex flex-col flex-grow">
-                                        <h3 class="text-base sm:text-base font-bold text-evergreen mb-2">Sistem Diagnosis EKG Otomatis Menggunakan ResNet dan CNN Multi-Branch dengan Pipeline Validasi Klinis</h3>
+                                        <h3 class="text-base sm:text-base font-bold text-evergreen mb-2">Jakarta SIGMA: Sistem Inovatif Generasi Muda  sebagai Platform Digital Transformasi Proyek Generasi Muda menjadi Solusi Urban Jakarta</h3>
                                         <p class="text-evergreen text-[10px] sm:text-xs mb-4 flex-grow">
-                                            This research introduces an automated ECG diagnosis designed for accuracy and accountability. We developed a Multi-Branch Deep Learning architecture (ResNet/CNN) for multi-label classification equipped with a post-hoc clinical validation pipeline. On the PTB-XL dataset, our system demonstrates high performance (macro-AUC 0.9424 and F1-max 0.7573) while generating annotated visual reports aligned with clinical standards.
+                                            Analyzed student portfolios in software development and data science to design Jakarta SIGMA, an open digital platform bridging youth talent with urban challenges. Conducted competitive analysis and stakeholder research to propose a scalable solution for transforming student projects into real-world urban problem-solving initiatives.
                                         </p>
                                         <div class="flex justify-between items-center mt-auto">
                                             <div class="flex space-x-2">
-                                                <img src="{% static 'image/github.png' %}" alt="Kaggle" class="w-10 h-10 object-contain">
-                                                <img src="{% static 'image/python.png' %}" alt="Python" class="w-10 h-10 object-contain">
-                                                <img src="{% static 'image/colab.png' %}" alt="Google Colab" class="w-10 h-10 object-contain">
-                                                <img src="{% static 'image/word.png' %}" alt="word" class="w-10 h-10 object-contain">
+                                                <img src="{% static 'image/word.png' %}" alt="Word" class="w-10 h-10 object-contain">
                                             </div>
-                                            <a href="https://univindonesia-my.sharepoint.com/:b:/g/personal/irma_nia_office_ui_ac_id/EddBW2uDevtCp7UQ2q2vmJcByvROQGHeJEuXSxS3RfuLdw?e=pwglc1" target="_blank" class="bg-mauve text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-peoni transition-colors duration-300">
+                                            <a href="https://univindonesia-my.sharepoint.com/:b:/g/personal/irma_nia_office_ui_ac_id/EXMVjCO0PcpNuD5MukhqPW4Bvq-QuHMeBegKn9K1IJiawA?e=1Xi5Wb" target="_blank" class="bg-mauve text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-peoni transition-colors duration-300">
                                                 Read
                                             </a>
                                         </div>
@@ -311,18 +364,20 @@
                                 <!-- Research Card 4 -->
                                 <div class="bg-mist rounded-lg shadow-lg overflow-hidden hover:shadow-xl hover:-translate-y-2 transition-all duration-300 flex flex-col h-full">
                                     <div class="h-48 bg-gray-200 overflow-hidden">
-                                        <img src="{% static 'image/sigma.png' %}" alt="Kaggle Research" class="w-full h-full object-cover">
+                                        <img src="{% static 'image/fedhgn.png' %}" alt="FedHGN Research" class="w-full h-full object-cover">
                                     </div>
                                     <div class="p-6 flex flex-col flex-grow">
-                                        <h3 class="text-base sm:text-base font-bold text-evergreen mb-2">Jakarta SIGMA: Sistem Inovatif Generasi Muda sebagai Platform Digital Transformasi Proyek Generasi Muda menjadi Solusi Urban Jakarta</h3>
+                                        <h3 class="text-base sm:text-base font-bold text-evergreen mb-2">FedHGN untuk Deteksi Kejahatan Transaksi dengan Kolaborasi  antar Institusi Keuangan tanpa Melanggar Privasi Data </h3>
                                         <p class="text-evergreen text-[10px] sm:text-xs mb-4 flex-grow">
-                                            This study analyzes student portfolios in software development and data science, and proposes Jakarta SIGMA (Sistem Inovatif Generasi Muda/Innovative Youth Generation System) as an open digital platform that bridges student solutions with urban challenges.
+                                            Developed a federated heterogeneous graph neural network to detect money laundering patterns across multiple financial institutions without sharing raw transaction data. Implemented RGCN-based modeling on the IBM AML dataset and evaluated performance using accuracy and macro F1-score metrics, achieving 97.19% accuracy while maintaining strict data privacy constraints.
                                         </p>
                                         <div class="flex justify-between items-center mt-auto">
                                             <div class="flex space-x-2">
-                                                <img src="{% static 'image/word.png' %}" alt="Python" class="w-10 h-10 object-contain">
+                                                <img src="{% static 'image/github.png' %}" alt="GitHub" class="w-10 h-10 object-contain">
+                                                <img src="{% static 'image/python.png' %}" alt="Python" class="w-10 h-10 object-contain">
+                                                <img src="{% static 'image/word.png' %}" alt="Word" class="w-10 h-10 object-contain">
                                             </div>
-                                            <a href="https://univindonesia-my.sharepoint.com/:b:/g/personal/irma_nia_office_ui_ac_id/EXMVjCO0PcpNuD5MukhqPW4Bvq-QuHMeBegKn9K1IJiawA?e=1Xi5Wb" target="_blank" class="bg-mauve text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-peoni transition-colors duration-300">
+                                            <a href="https://univindonesia-my.sharepoint.com/:b:/g/personal/irma_nia_office_ui_ac_id/EUbvWzw9aHVKhTFwm21BdR0B0vffavEKUau5VEUkDp1Nzw?e=PcegpN" target="_blank" class="bg-mauve text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-peoni transition-colors duration-300">
                                                 Read
                                             </a>
                                         </div>
@@ -332,17 +387,17 @@
                                 <!-- Research Card 5 -->
                                 <div class="bg-mist rounded-lg shadow-lg overflow-hidden hover:shadow-xl hover:-translate-y-2 transition-all duration-300 flex flex-col h-full">
                                     <div class="h-48 bg-gray-200 overflow-hidden">
-                                        <img src="{% static 'image/wjes.png' %}" alt="Kaggle Research" class="w-full h-full object-cover">
+                                        <img src="{% static 'image/wjes.png' %}" alt="Poverty Mapping Research" class="w-full h-full object-cover">
                                     </div>
                                     <div class="p-6 flex flex-col flex-grow">
-                                        <h3 class="text-base sm:text-base font-bold text-evergreen mb-2">Pemetaan Kemiskinan Hiperlokal Berbasis Deep Learning untuk Meningkatkan Efektivitas Bantuan Sosial</h3>
+                                        <h3 class="text-base sm:text-base font-bold text-evergreen mb-2">Deep Learning-Based Hyperlocal Poverty Mapping for Social Assistance Optimization</h3>
                                         <p class="text-evergreen text-[10px] sm:text-xs mb-4 flex-grow">
-                                            Social assistance programs are a vital component of poverty alleviation efforts in West Java. This study aims to develop an artificial intelligence (AI) system to support hyperlocal poverty mapping in West Java with greater precision and adaptability, thereby improving the effectiveness of social assistance programs
+                                            Developing an AI system for hyperlocal poverty mapping in West Java using deep learning techniques to improve social assistance program targeting. Implemented machine learning algorithms to analyze socioeconomic indicators with greater precision and adaptability than traditional mapping methods, supporting evidence-based policy decisions for poverty alleviation programs.
                                         </p>
                                         <div class="flex justify-between items-center mt-auto">
                                             <div class="flex space-x-2">
-                                                <img src="{% static 'image/word.png' %}" alt="word" class="w-10 h-10 object-contain">
-                                                <img src="{% static 'image/colab.png' %}" alt="colab" class="w-10 h-10 object-contain">
+                                                <img src="{% static 'image/word.png' %}" alt="Word" class="w-10 h-10 object-contain">
+                                                <img src="{% static 'image/colab.png' %}" alt="Google Colab" class="w-10 h-10 object-contain">
                                                 <img src="{% static 'image/python.png' %}" alt="Python" class="w-10 h-10 object-contain">
                                                 <img src="{% static 'image/github.png' %}" alt="GitHub" class="w-10 h-10 object-contain">
                                             </div>
@@ -386,7 +441,7 @@
                     <div id="carousel-ml-ai" class="flex transition-transform duration-300 ease-in-out">
                         <!-- Slide 1 -->
                         <div class="w-full flex-shrink-0">
-                            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 px-8 justify-items-center">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 px-8 justify-center place-items-center max-w-4xl mx-auto">
                                 <!-- AI Card 1 -->
                                 <div class="bg-mist rounded-lg shadow-lg overflow-hidden hover:shadow-xl hover:-translate-y-2 hover:bg-mist transition-all duration-300 flex flex-col h-full">
                                     <div class="h-48 bg-gray-200 overflow-hidden">
@@ -435,7 +490,7 @@
                                 </div>
 
                                 <!-- AI Card 3 -->
-                                <div class="bg-mist rounded-lg shadow-lg overflow-hidden hover:shadow-xl hover:-translate-y-2 hover:bg-mist transition-all duration-300 flex flex-col h-full">
+                                {% comment %} <div class="bg-mist rounded-lg shadow-lg overflow-hidden hover:shadow-xl hover:-translate-y-2 hover:bg-mist transition-all duration-300 flex flex-col h-full">
                                     <div class="h-48 bg-gray-200 overflow-hidden">
                                         <img src="{% static 'image/CoppaRisk.png' %}" alt="Kaggle ML Project" class="w-full h-full object-cover">
                                     </div>
@@ -453,8 +508,8 @@
                                                 See Notebook
                                             </a>
                                         </div>
-                                    </div>
-                                </div>
+                                    </div> 
+                                </div> {% endcomment %}
                             </div>
                         </div>
 
@@ -563,9 +618,9 @@
                             <img src="{% static 'image/petclinic.png' %}" alt="Google Colab AI Project" class="w-full h-full object-cover">
                         </div>
                         <div class="p-6 flex flex-col flex-grow">
-                            <h3 class="text-base sm:text-base font-bold text-evergreen mb-2">Pet Clinic</h3>
+                            <h3 class="text-base sm:text-base font-bold text-evergreen mb-2">Pet Clinic Management System</h3>
                             <p class="text-evergreen text-[10px] sm:text-xs mb-4 flex-grow">
-                                I was a collaborator in developing a website integrated with Supabase. The website uses PostgreSQL for querying. Petclinic is an integrated system for medical recordkeeping that connects the front desk, doctors, nurses, and clients. Our lecturer gave this project a perfect score of 100.
+                                Developed a comprehensive veterinary clinic management system using Supabase and PostgreSQL. Designed and implemented database schemas for medical record management, integrating front desk operations, veterinary consultations, and client communications. Built scalable queries and data relationships supporting multi-role access control for healthcare workflow optimization.
                             </p>
                             <div class="flex justify-between items-center mt-auto">
                                 <div class="flex space-x-2">
@@ -587,9 +642,38 @@
 
     <!-- JavaScript for Navigation -->
     <script>
+        // Mobile menu toggle functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            if (mobileMenuBtn && mobileMenu) {
+                mobileMenuBtn.addEventListener('click', function() {
+                    mobileMenu.classList.toggle('hidden');
+                    
+                    // Toggle hamburger to X animation
+                    const svg = mobileMenuBtn.querySelector('svg');
+                    if (mobileMenu.classList.contains('hidden')) {
+                        svg.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>';
+                    } else {
+                        svg.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>';
+                    }
+                });
+                
+                // Close mobile menu when clicking outside
+                document.addEventListener('click', function(event) {
+                    if (!mobileMenuBtn.contains(event.target) && !mobileMenu.contains(event.target)) {
+                        mobileMenu.classList.add('hidden');
+                        const svg = mobileMenuBtn.querySelector('svg');
+                        svg.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>';
+                    }
+                });
+            }
+        });
+        
         // Carousel functionality
         const carousels = {
-            'data-viz': { currentSlide: 0, totalSlides: 2 },
+            'data-viz': { currentSlide: 0, totalSlides: 1 },
             'research': { currentSlide: 0, totalSlides: 2 },
             'ml-ai': { currentSlide: 0, totalSlides: 2 },
             'sql': { currentSlide: 0, totalSlides: 2 }

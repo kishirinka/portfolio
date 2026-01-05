@@ -211,11 +211,37 @@
 </head>
 <body class="bg-mist h-screen font-sans overflow-hidden">
     <!-- Navigation -->
-    <nav class="flex justify-center space-x-4 sm:space-x-8 lg:space-x-12 pt-4 sm:pt-6 lg:pt-8 pb-4 px-2 sm:px-4 lg:px-6 text-peoni font-medium">
-        <a href="/" class="hover:text-sage transition-colors text-2xl sm:text-3xl text-mauve font-semibold">Home</a>
-        <a href="/about/" class="hover:text-sage transition-colors text-lg sm:text-xl">About me</a>
-        <a href="/project" class="hover:text-sage transition-colors text-lg sm:text-xl">Project</a>
-        <a href="/contact" class="hover:text-sage transition-colors text-lg sm:text-xl">Contact</a>
+    <nav class="relative">
+        <!-- Desktop Navigation -->
+        <div class="hidden sm:flex justify-center space-x-4 sm:space-x-8 lg:space-x-12 pt-4 sm:pt-6 lg:pt-8 pb-4 px-2 sm:px-4 lg:px-6 text-peoni font-medium">
+            <a href="/" class="hover:text-sage transition-colors text-lg sm:text-xl text-mauve font-semibold">Home</a>
+            <a href="/about" class="hover:text-sage transition-colors text-sm sm:text-base">About me</a>
+            <a href="/project" class="hover:text-sage transition-colors text-sm sm:text-base">Project</a>
+            <a href="/contact" class="hover:text-sage transition-colors text-sm sm:text-base">Contact</a>
+        </div>
+        
+        <!-- Mobile Navigation -->
+        <div class="sm:hidden">
+            <!-- Mobile Menu Button -->
+            <div class="flex justify-between items-center pt-4 pb-4 px-4">
+                <a href="/" class="text-mauve font-bold text-xl">Nia</a>
+                <button id="mobile-menu-btn" class="text-peoni hover:text-sage transition-colors p-2">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+            
+            <!-- Mobile Menu Dropdown -->
+            <div id="mobile-menu" class="hidden absolute top-full left-0 right-0 bg-mist shadow-lg z-50">
+                <div class="px-4 py-2 space-y-2">
+                    <a href="/" class="block py-3 px-2 text-mauve font-semibold text-lg border-b border-peoni">Home</a>
+                    <a href="/about" class="block py-3 px-2 text-peoni hover:text-sage transition-colors">About me</a>
+                    <a href="/project" class="block py-3 px-2 text-peoni hover:text-sage transition-colors">Project</a>
+                    <a href="/contact" class="block py-3 px-2 text-peoni hover:text-sage transition-colors">Contact</a>
+                </div>
+            </div>
+        </div>
     </nav>
 
     <!-- Floating Background Elements - Full Screen -->
@@ -251,33 +277,33 @@
     <!-- Main Content -->
     <div class="relative z-10 w-full h-screen flex items-center justify-center">
         <div class="container mx-auto px-4 sm:px-8 lg:px-16 max-w-6xl">
-            <div class="flex flex-col items-center justify-center space-y-4 sm:space-y-6 -mt-4 sm:-mt-8">
+            <div class="flex flex-col items-center justify-center space-y-4 sm:space-y-6 -mt-28 sm:-mt-32 lg:-mt-40">
                 <!-- Glass Card Container -->
                 <div class="backdrop-blur-md bg-white/5 border border-white/10 rounded-2xl sm:rounded-3xl p-4 sm:p-6 lg:p-10 shadow-xl w-full max-w-5xl relative z-10">
-                    <!-- Main Title -->
+                    <!-- Elevator Pitch Content -->
                     <div class="text-center">
-                        <h1 class="text-4xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-extrabold text-evergreen mb-1 leading-tight">Hi, I'm Nia!</h1>
-                        <p class="text-lg sm:text-xl lg:text-2xl font-medium text-sage text-center mb-0 tracking-wide sm:tracking-widest">
-                            An Information System Student<br>
-                            at Universitas Indonesia
-                        </p>
-                    </div>
+                        <!-- Headline: What You Do -->
+                        <h1 class="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold text-evergreen mb-4 leading-tight">Hi, I'm Nia</h1>
+                        <h2 class="text-xl sm:text-2xl lg:text-3xl font-bold text-sage mb-6 leading-relaxed">
+                            Data & Analytics-Oriented Information Systems Student
+                        </h2>
 
-                    <!-- Checkbox Items -->
-                    <div class="p-2 sm:p-4 -mt-1 sm:-mt-2">
-                        <div class="flex flex-col sm:flex-row flex-wrap justify-center gap-4 sm:gap-6 lg:gap-9">
-                            <div class="flex items-center">
-                                <div class="w-6 h-6 sm:w-8 sm:h-8 border-2 border-mist rounded mr-3 sm:mr-4 checkbox-animate-1"></div>
-                                <span class="text-evergreen font-medium text-lg sm:text-xl lg:text-2xl">Data Analyst</span>
-                            </div>
-                            <div class="flex items-center">
-                                <div class="w-6 h-6 sm:w-8 sm:h-8 border-2 border-mist rounded mr-3 sm:mr-4 checkbox-animate-2"></div>
-                                <span class="text-evergreen font-medium text-lg sm:text-xl lg:text-2xl">Data Scientist</span>
-                            </div>
-                            <div class="flex items-center">
-                                <div class="w-6 h-6 sm:w-8 sm:h-8 border-2 border-mist rounded mr-3 sm:mr-4 checkbox-animate-3"></div>
-                                <span class="text-evergreen font-medium text-lg sm:text-xl lg:text-2xl">AI Researcher</span>
-                            </div>
+                        <!-- Subheadline: How You Create Value -->
+                        <p class="text-base sm:text-lg lg:text-xl font-medium text-evergreen text-center mb-8 max-w-4xl mx-auto leading-relaxed">
+                            I work with data to uncover insights, support decisions,<br>
+                            and explore how analytics, AI, and product thinking intersect.
+                        </p>
+
+                        <!-- Clear CTAs -->
+                        <div class="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4">
+                            <a href="/project" class="bg-sage text-white px-6 py-3 rounded-xl text-base font-semibold hover:bg-evergreen transition-colors duration-300 shadow-lg">
+                                View Projects
+                            </a>
+                            <a href="https://drive.google.com/file/d/1En2m4kGZG40nkkwfgjoEedYz3p6pvy10/view?usp=sharing" 
+                               target="_blank"
+                               class="bg-white border-2 border-sage text-sage px-6 py-3 rounded-xl text-base font-semibold hover:bg-sage hover:text-white transition-colors duration-300 shadow-lg">
+                                View Resume
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -286,6 +312,48 @@
     </div>
 
     <script>
+        // Mobile menu toggle functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            if (mobileMenuBtn && mobileMenu) {
+                mobileMenuBtn.addEventListener('click', function() {
+                    mobileMenu.classList.toggle('hidden');
+                    
+                    // Toggle hamburger to X animation
+                    const svg = mobileMenuBtn.querySelector('svg');
+                    if (mobileMenu.classList.contains('hidden')) {
+                        svg.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>';
+                    } else {
+                        svg.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>';
+                    }
+                });
+                
+                // Close mobile menu when clicking outside
+                document.addEventListener('click', function(event) {
+                    if (!mobileMenuBtn.contains(event.target) && !mobileMenu.contains(event.target)) {
+                        mobileMenu.classList.add('hidden');
+                        const svg = mobileMenuBtn.querySelector('svg');
+                        svg.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>';
+                    }
+                });
+            }
+            
+            // Enhanced touch interactions for mobile
+            if (window.innerWidth <= 768) {
+                const buttons = document.querySelectorAll('a, button');
+                buttons.forEach(button => {
+                    button.addEventListener('touchstart', function() {
+                        this.style.transform = 'scale(0.95)';
+                    });
+                    button.addEventListener('touchend', function() {
+                        this.style.transform = 'scale(1)';
+                    });
+                });
+            }
+        });
+        
         // Page loaded
         window.addEventListener('load', function() {
             console.log('Portfolio page loaded');
